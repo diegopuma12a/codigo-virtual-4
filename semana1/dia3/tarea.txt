@@ -1,0 +1,8 @@
+1.-Pagina de react añadir enlace(<a>) a cursos.html
+2.-Seccion Introduccion despues de Profesores del curso con su respectivo titulo,descripcion
+3.-Seccion Conceptos Básicos despues de Profesores del curso con su respectivo titulo,descripcion
+
+descripcion => lorem
+
+Opcional : 
+Hacer los mismo que la pagina de react.html,pero con los cursos mas buscados.
