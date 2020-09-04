@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tablas</title>
+  </head>
+  <body>
+    <header>
+      <h1>Tablas</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>Configuraciones de tablas</h2>
+        <table
+          border="5"
+          bgcolor="#1AEB72"
+          background="https://rosolutions.com.mx/blog/wp-content/uploads/2019/06/1-y6C4nSvy2Woe0m7bWEn4BA.png"
+          bordercolor="red"
+          cellpadding="10"
+          width="500"
+          height="400"
+        >
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Edad</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Diego</td>
+              <td>Puma</td>
+              <td>16</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Rowspan y el colspan</h2>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Curso</th>
+              <th>Duración</th>
+              <th>Profesor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="3">Algoritmos</td>
+              <td colspan="2">
+                <center>3 meses</center>
+              </td>
+            </tr>
+            <tr>
+              <td>1 mes</td>
+              <td>Jorge garnica</td>
+            </tr>
+            <tr>
+              <td>1 dia</td>
+              <td>Mi profe</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
