@@ -26,7 +26,12 @@
             <label for="inputEdad">Edad </label>
           </td>
           <td>
-            <input type="number" id="inputEdad" placeholder="Ingrese su edad" />
+            <input
+              type="number"
+              id="inputEdad"
+              placeholder="Ingrese su edad"
+              required
+            />
           </td>
         </tr>
 
@@ -35,8 +40,14 @@
             <label for="inputFechaNacimiento">Fecha Nacimiento</label>
           </td>
           <td>
-            <input type="date" id="inputFechaNacimiento" value="2020-12-12" />
+            <input
+              type="date"
+              name=""
+              id="inputFechaNacimiento"
+              value="2020-12-12"
+            />
           </td>
+      
         </tr>
 
         <tr>
@@ -108,19 +119,42 @@
             <label for="txtAreaComentario">Comentarios</label>
           </td>
           <td>
-            <textarea id="txtAreaComentario" cols="10" rows="4"></textarea>            
+            <textarea id="txtAreaComentario" cols="10" rows="4"></textarea>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="slcDepartamentos">Seleccione su Departamento</label>
+          </td>
+          <td>
+            <select id="slcDepartamentos">
+              <option>Seleccione Departamento</option>
+              <option>Arequipa</option>
+              <option>Lima</option>
+              <option>Tacna</option>
+            </select>
           </td>
         </tr>
 
 
         <tr>
             <td>
-                <label>Acciones</label>
+                <label for="inputFileSubirArchivo">Subir Archivo</label>                
             </td>
             <td>
-                <input type="submit" value="Registrarme">
-                <input type="reset" value="Limpiar Formulario">
+                <input type="file" id="inputFileSubirArchivo">
             </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Acciones</label>
+          </td>
+          <td>
+            <input type="submit" value="Registrarme" />
+            <input type="reset" value="Limpiar Formulario" />
+          </td>
         </tr>
 
         <!--  -->
