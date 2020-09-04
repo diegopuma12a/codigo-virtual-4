@@ -16,6 +16,7 @@
               type="text"
               id="inputNombre"
               placeholder="Ingrese nombre completo"
+              required
             />
           </td>
         </tr>
@@ -34,7 +35,7 @@
             <label for="inputFechaNacimiento">Fecha Nacimiento</label>
           </td>
           <td>
-            <input type="date" id="inputFechaNacimiento" />
+            <input type="date" id="inputFechaNacimiento" value="2020-12-12" />
           </td>
         </tr>
 
@@ -53,15 +54,75 @@
           </td>
           <td>
             <label for="inputRadioM">Masculino</label>
-            <input type="radio" id="inputRadioM" name="genero" />
+            <input type="radio" id="inputRadioM" name="genero" checked />
 
             <label for="inputRadioF">Femenino</label>
             <input type="radio" id="inputRadioF" name="genero" />
 
-            
-
+            <label for="inputRadioO">Otro</label>
+            <input type="radio" id="inputRadioO" name="genero" />
           </td>
         </tr>
+
+        <tr>
+          <td>
+            <label>Idiomas</label>
+          </td>
+          <td>
+            <label for="checkIngles">Ingles</label>
+            <input type="checkbox" id="checkIngles" checked />
+
+            <label for="checkEspañol">Español</label>
+            <input type="checkbox" id="checkEspañol" />
+
+            <label for="checkPortugues">Portugues</label>
+            <input type="checkbox" id="checkPortugues" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="inputEmail">Email :</label>
+          </td>
+          <td>
+            <input
+              type="email"
+              value="@gmail.com"
+              placeholder="Ingrese su Email"
+              id="inputEmail"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="inputPassword">Password</label>
+          </td>
+          <td>
+            <input type="password" id="inputPassword" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="txtAreaComentario">Comentarios</label>
+          </td>
+          <td>
+            <textarea id="txtAreaComentario" cols="10" rows="4"></textarea>            
+          </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <label>Acciones</label>
+            </td>
+            <td>
+                <input type="submit" value="Registrarme">
+                <input type="reset" value="Limpiar Formulario">
+            </td>
+        </tr>
+
         <!--  -->
       </table>
     </form>
