@@ -14,7 +14,7 @@ h3 {
 
 /* Seleccionamos hijos sin importar el nivel */
 .anuncios .textoAnuncio{
-    background: chocolate; 
+    background: chocolate;
     color: white;   
 }
 
