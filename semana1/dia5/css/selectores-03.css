@@ -1,3 +1,32 @@
-header{
-    background: gray;
+header {
+  background: gray;
 }
+
+section {
+  background: yellow;
+}
+
+h1,
+h2,
+h3 {
+  color: red;
+}
+
+.tarjeta {
+  background: royalblue;
+}
+
+.tarjeta > .cuerpo-tarjeta {
+  background: salmon;
+}
+
+.tarjeta > .cuerpo-tarjeta > h4,p{
+    color: black;
+}
+
+.tarjeta > .pie-pagina-tarjeta {
+  background: green;
+}
+
+
+
