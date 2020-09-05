@@ -12,21 +12,26 @@ h3 {
   color: red;
 }
 
+/* Seleccionamos hijos sin importar el nivel */
+.anuncios .textoAnuncio{
+    background: chocolate; 
+    color: white;   
+}
+
 .tarjeta {
   background: royalblue;
 }
 
+/* Seleccionamos hijos  especificos y en orden*/
 .tarjeta > .cuerpo-tarjeta {
   background: salmon;
 }
 
-.tarjeta > .cuerpo-tarjeta > h4,p{
-    color: black;
+.tarjeta > .cuerpo-tarjeta > h4,
+p {
+  color: black;
 }
 
 .tarjeta > .pie-pagina-tarjeta {
   background: green;
 }
-
-
-
