@@ -26,6 +26,16 @@ body {
   /*alpha: 0 es totalmente transparente*/
   color: rgba(255, 255, 255, 0.5);
 }
+.color-rojo-1 {
+  background-color: hsl(180, 100%, 50%);
+}
+.color-rojo-2 {
+  background-color: hsl(180, 100%, 40%);
+}
+.color-rojo-3 {
+  background-color: hsl(180, 100%, 30%);
+}
+/*TODO: COLOR HSL*/
 .header__title {
   text-align: center;
 }
