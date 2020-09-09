@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
-
+/*selecciona a todos los elementos del dom*/
+* {
+  /*Regla para que el padding y el borde de un elemento*/
+  /*no afecten en su tamaño establecido*/
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 body {
   font-family: "Poppins", sans-serif;
   background-color: #444;
@@ -17,8 +24,34 @@ body {
 .main {
   background-color: #aaa;
   width: 1200px;
-  height: 100px;
+  /* height: 100px; */
+  padding-bottom: 20px;
 }
 footer p {
   text-align: center;
+}
+.main__imagenes {
+  height: 100px;
+  /*controla el desborde de los hijos de un 
+  elemento*/
+  /* overflow: hidden; */
+  /*si el contenido es muy grande en el eje
+  y, se va a dibujar un scroll*/
+  overflow-y: scroll;
+  /* overflow-x: scroll; */
+}
+
+.main__descripcion {
+  height: 100px;
+  width: 100px;
+  background-color: orange;
+  border: 5px solid white;
+  margin-bottom: 21px;
+  padding: 5px;
+}
+.main__articulos {
+  height: 150px;
+  width: 150px;
+  margin: 20px;
+  background-color: plum;
 }

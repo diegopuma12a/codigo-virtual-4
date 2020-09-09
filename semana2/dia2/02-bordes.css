@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.formulario {
+  border: 2px solid #530780;
+  width: 500px;
+  height: 600px;
+  margin: 20px auto;
+  /*border curvo*/
+  border-radius: 20px;
+  padding: 20px;
+}
+/*button*/
+.formulario__submit {
+  border: none;
+  padding: 10px;
+  color: white;
+  background-color: #530780;
+  border-radius: 3px;
+  margin-top: 10px;
+  /*colocando border sólo en bottom(abajo)*/
+  border-bottom: 4px solid #25023a;
+}
+.formulario__input {
+  width: 100%;
+  padding: 5px 25px;
+  border: none;
+  /*oultine es un segundo borde exterior
+  sin embargo, no es tomado en cuenta para calcular
+  el ancho ni el alto de un elemento, siempre esta
+  flotando*/
+  outline: none;
+  border-bottom: 1px solid #e5b8ff;
+  background-color: #fcf6ff;
+  background-image: url("./Vector.svg");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: center left;
+}

@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.seccion1 {
+  height: 100px;
+  /*color de fondo*/
+  background-color: #444;
+}
+.seccion2 {
+  height: 200px;
+  /*imagen de fondo*/
+  background-image: url("https://www.publicdomainpictures.net/pictures/250000/nahled/clouds-background-005.jpg");
+  /*controlar la repetición de la imagen*/
+  background-repeat: no-repeat;
+  /*controlar la posicion de la imagen*/
+  /*center - left - right */
+  background-position: center;
+  /**/
+  background-size: cover;
+}
+.seccion2__titulo {
+  height: 200px;
+  background-color: rgba(40, 40, 40, 0.5);
+  color: white;
+  text-align: center;
+}
+.seccion3 {
+  height: 500px;
+  /*colocando una gradiente*/
+  background: #200122;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #6f0000, #200122);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #6f0000, #200122); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
