@@ -40,3 +40,13 @@
   background-size: 20px 20px;
   background-position: center left;
 }
+.formulario__mensaje {
+  width: 100%;
+  outline: none;
+  background-color: #fcf6ff;
+  border: 1px solid #eac1ff;
+  margin-top: 5px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
