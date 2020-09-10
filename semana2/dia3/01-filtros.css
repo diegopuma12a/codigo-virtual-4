@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+body {
+  background-color: #bbb;
+}
+.seccion1 {
+  /*blur es un desenfoque que admite valores entre 1px y 10px*/
+  /* filter: blur(4px); */
+  /*grayscale es un filtro para colocar un contenido
+  en escala de grises: valores de 0 a 1*/
+  /* filter: grayscale(1); */
+}
+/*:hover coloca estilos cuando
+el mouse está sobre un elemento*/
+.seccion1:hover {
+  /* filter: grayscale(1); */
+
+  /*brightness aplica brillo a un elemento y acepta valores entre
+  0 y 10 ejm: 0.8*/
+  /* El valor 1 es el brillo normal de la imagen*/
+  /* filter: brightness(0.7); */
+
+  /*opacity define la transparencia de un elemento*/
+  /*0 es transparente*/
+  /*1 es nada transparente*/
+  filter: opacity(0);
+}
