@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.container {
+  height: 500px;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 150px;
+  background: -webkit-linear-gradient(top left, #f85c80, #2e97ff, #9ffbcc);
+  /* background: url("https://www.ngenespanol.com/wp-content/uploads/2018/08/Tecnolog%C3%ADa-en-favor-de-los-bosques.jpg"); */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
