@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.padre {
+  border: 1px solid tomato;
+  display: flex;
+  /*POR DEFECTO*/
+  /* flex-direction: row; */
+  /* flex-wrap: nowrap; los hijos no colapsan*/
+
+  /* flex-direction: column; */
+
+  /*propiedad para que los hijos colapsen
+  en caso necesiten más ancho que le del padre*/
+  flex-wrap: wrap;
+}
+
+.caja-1,
+.caja-2,
+.caja-3,
+.caja-4 {
+  border: 1px solid black;
+  width: 25%;
+}
+
+.caja-1 {
+  width: 200px;
+  background-color: teal;
+}
+
+.seccion2 {
+  display: flex;
+}
+
+.seccion2__1 {
+  /* flex: 2; */
+  width: 240px;
+  background-color: teal;
+  border: 1px solid red;
+}
+.seccion2__2 {
+  flex: 1;
+  border: 1px solid red;
+}
+.seccion2__3 {
+  flex: 1;
+  border: 1px solid red;
+}
+.seccion2__4 {
+  flex: 1;
+  border: 1px solid red;
+}
+
+.header {
+  height: 60px;
+  background-color: tomato;
+}
+
+.header__lista {
+  height: 100%;
+  background-color: teal;
+  display: flex;
+  list-style: none;
+}
+.header__item {
+  flex: 1;
+  border: 1px solid yellow;
+}

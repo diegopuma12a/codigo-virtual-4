@@ -1,0 +1,124 @@
+:root {
+  /*creando variables para usarlas
+  en tooooodo el documento*/
+  --primary: #e94a3e;
+  --light: #eee;
+  --gray: #666;
+  --gray-light: #999;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--light);
+}
+
+.card {
+  width: 300px;
+  background-color: white;
+  cursor: pointer;
+  display: inline-block;
+  margin: 20px;
+}
+.card:hover .card__description {
+  height: 90px;
+}
+.card:hover .card__header {
+  height: 200px;
+}
+.card:hover .card__img {
+  filter: brightness(0.7);
+  transform: scale(1.1, 1.1);
+}
+
+.card__header {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+.card__img {
+  width: 100%;
+  transition: all 0.5s ease;
+}
+.card__photos {
+  padding: 6px 10px;
+  background-color: var(--primary);
+  color: var(--light);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: bold;
+}
+.card__date {
+  background-color: var(--primary);
+  color: var(--light);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-align: center;
+  padding-top: 5px;
+  font-weight: bold;
+}
+.card__body {
+  padding: 20px;
+}
+.card__title {
+  margin-bottom: 15px;
+}
+.card__subtitle {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+.card__description {
+  font-size: 13px;
+  line-height: 22px;
+  color: var(--gray);
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.card__footer {
+  padding: 10px 20px;
+}
+.card__feed {
+  list-style: none;
+}
+.card__item {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--gray-light);
+  margin-right: 15px;
+}
+
+/* HEADER */
+.header {
+  height: 60px;
+  background: -webkit-linear-gradient(
+    left,
+    var(--primary),
+    #e47f78,
+    var(--primary)
+  );
+}
+.main__menu,
+.main__container {
+  display: inline-block;
+  height: calc(100vh - 60px);
+}
+
+.main__menu {
+  width: 220px;
+  background-color: #e47f78;
+}
+.main__container {
+  /* height: ; */
+  width: calc(100vw - 300px);
+}
