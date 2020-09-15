@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body {
+  background-color: #abffab;
+}
+.card {
+  align-self: d asd asd as d asd as da sd;
+}
+/*Agregando mediaqueries*/
+/*
+1. Los mediaqueries deben ser ordenados de
+forma descendente, es decir primero las resoluciones
+más grander y luego las más pequeñas
+*/
+
+/*El media query a continuación, serán una serie de reglas que se
+aplicarán a la página, siempre y cuando el ancho del viewport, 
+sea menor o igual a 1024px */
+/*es lo mismo decir, un tamaño máximo de 1024px*/
+@media (max-width: 1024px) {
+  body {
+    background-color: #fbd07f;
+  }
+  .card {
+  }
+}
+
+/*esta regla servirá para colocar estilos cuando el viewport
+sea menor o igual a 768px*/
+@media (max-width: 768px) {
+  body {
+    background-color: #a7c6ff;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background-color: #fda8ef;
+  }
+}
