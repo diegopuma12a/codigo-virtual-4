@@ -1,0 +1,26 @@
+.features {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*div*/
+.features__card {
+  width: 50%;
+  text-align: center;
+  padding: 3rem;
+}
+
+/*img*/
+.features__img {
+}
+
+/*h3*/
+.features__title {
+}
+
+/*p*/
+.features__text {
+  
+}

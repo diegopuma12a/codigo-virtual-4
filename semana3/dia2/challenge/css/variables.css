@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+:root {
+  /*intro and email sign up background*/
+  --dark-blue-1: hsl(217, 28%, 15%);
+  /*main background*/
+  --dark-blue-2: hsl(218, 28%, 13%);
+  /*footer background*/
+  --dark-blue-3: hsl(216, 53%, 9%);
+  /*testimonials background*/
+  --dark-blue-4: hsl(219, 30%, 18%);
+
+  --cyan: hsl(176, 68%, 64%);
+  --blue: hsl(198, 60%, 50%);
+
+  --white: hsl(0, 0%, 100%);
+
+  --width: 1440px;
+
+  --open-sans: "Open Sans", sans-serif;
+  --raleway: "Raleway", sans-serif;
+}
