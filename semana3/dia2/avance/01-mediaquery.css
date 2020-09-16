@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+}
+
+.header {
+  height: 3.75rem;
+  background-color: #555;
+}
+
+.main {
+  display: flex;
+  min-height: calc(100vh - 3.75rem);
+  background-color: #ccc;
+  /* flex-wrap: wrap; */
+}
+
+.section-left {
+  width: 50%;
+  height: 200px;
+  background: #9bcafa;
+}
+.section-right {
+  width: 50%;
+  height: 200px;
+  background: #bdfa8e;
+}
+/*ancho tablet*/
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+  .section-left,
+  .section-right {
+    width: 100%;
+  }
+}
