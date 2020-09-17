@@ -1,0 +1,33 @@
+.tutorial {
+  max-width: var(--width);
+  margin: 0 auto;
+  display: flex;
+}
+
+.tutorial__figure {
+  width: 50%;
+  text-align: right;
+}
+
+.tutorial__info {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 4rem;
+  align-items: flex-start;
+}
+.tutorial__title {
+  font-size: 2.5rem;
+  font-family: var(--raleway);
+}
+.tutorial__paragraph {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+.tutorial__link {
+  text-decoration: none;
+  color: var(--cyan);
+  border-bottom: 1px solid var(--cyan);
+  padding-bottom: 0.3rem;
+}

@@ -1,0 +1,30 @@
+/*HEADER*/
+.header {
+  height: 60px;
+  max-width: var(--width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+}
+/*<nav>*/
+.header__nav {
+}
+
+/*<ul>*/
+.header__list {
+  list-style: none;
+  display: flex;
+}
+
+/*<li>*/
+.header__item {
+  margin-left: 3rem;
+}
+
+/*<a>*/
+.header__link {
+  text-decoration: none;
+  color: var(--white);
+}
