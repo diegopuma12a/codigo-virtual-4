@@ -1,0 +1,32 @@
+.suscribe {
+  max-width: 768px;
+  margin: 0 auto;
+  border-radius: 15px;
+  background-color: var(--dark-blue-1);
+  padding: 2.5rem 4rem;
+  text-align: center;
+  position: relative;
+  top: 7rem;
+}
+.suscribe__title {
+  font-size: 2rem;
+  margin-bottom: 1.3rem;
+}
+.suscribe__text {
+  width: 80%;
+  margin: 0 auto 2rem auto;
+  color: #ccc;
+}
+
+.suscribe__form {
+  display: flex;
+}
+
+.suscribe__input {
+  flex: 1;
+  margin-right: 1rem;
+  border-radius: 1.5rem;
+  border: none;
+  outline: none;
+  padding: 0 2rem;
+}

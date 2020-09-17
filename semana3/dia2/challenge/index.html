@@ -11,6 +11,12 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
     <title>
       Frontend Mentor | Fylo landing page with dark theme and features grid
@@ -114,7 +120,6 @@
         </div>
       </section>
       <section class="comments">
-        
         <div class="comment">
           <p class="comment__text">
             Fylo has improved our team productivity by an order of magnitude.
@@ -164,18 +169,66 @@
           </div>
         </div>
       </section>
+
+      <section class="suscribe">
+        <h2 class="suscribe__title">Get early access today</h2>
+        <p class="suscribe__text">
+          It only takes a minute to sign up and our free starter tier is
+          extremely generous. If you have any questions, our support team would
+          be happy to help you.
+        </p>
+        <form class="suscribe__form">
+          <input
+            type="text"
+            class="suscribe__input"
+            placeholder="email@example.com"
+          />
+          <button class="btn">Get Started For Free</button>
+        </form>
+      </section>
     </main>
 
-    Fylo has improved our team productivity by an order of magnitude. Since
-    making the switch our team has become a well-oiled collaboration machine.
-    Bruce McKenzie Founder & CEO, Huddle Fylo has improved our team productivity
-    by an order of magnitude. Since making the switch our team has become a
-    well-oiled collaboration machine. Iva Boyd Founder & CEO, Huddle Get early
-    access today It only takes a minute to sign up and our free starter tier is
-    extremely generous. If you have any questions, our support team would be
-    happy to help you. Get Started For Free Lorem ipsum dolor sit amet,
-    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-    dolore magna aliqua +1-543-123-4567 example@fylo.com About Us Jobs Press
-    Blog Contact Us Terms Privacy
+    <footer class="footer">
+      <figure class="footer__figure">
+        <img src="./images/logo.svg" alt="" />
+      </figure>
+      <section class="footer__info">
+        <div class="footer__location">
+          <i class="fas fa-map-marker"></i>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua
+          </p>
+        </div>
+        <div class="footer__phones">
+          <ul>
+            <li>
+              <i class="fas fa-phone"></i>
+              <span>+1-543-123-4567</span>
+            </li>
+            <li>
+              <i class="fas fa-mail-bulk"></i>
+              <span>example@fylo.com</span>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__sitemap">
+          <ul>
+            <li><a href="#"> About Us</a></li>
+            <li><a href="#"> Jobs</a></li>
+            <li><a href="#"> Press</a></li>
+            <li><a href="#"> Blog</a></li>
+            <li><a href="#"> Contact Us</a></li>
+            <li><a href="#"> Terms</a></li>
+            <li><a href="#"> Privacy</a></li>
+          </ul>
+        </div>
+        <div class="footer__social">
+          <i class="fas fa-fax"></i>
+          <i class="fas fa-file"></i>
+          <i class="fas fa-feather"></i>
+        </div>
+      </section>
+    </footer>
   </body>
 </html>

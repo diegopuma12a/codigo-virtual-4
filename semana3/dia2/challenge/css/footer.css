@@ -1,0 +1,61 @@
+.footer {
+  background-color: var(--dark-blue-3);
+  display: flex;
+  flex-direction: column;
+  padding: 15rem 8rem 8rem 8rem;
+}
+
+.footer__figure {
+  margin-bottom: 2rem;
+}
+
+.footer__info {
+  display: flex;
+}
+
+.footer__location {
+  flex: 1;
+  display: flex;
+  padding-right: 3rem;
+}
+.footer__location i {
+  margin-right: 2.5rem;
+}
+.footer__phones {
+  flex: 1;
+}
+
+.footer__phones ul {
+  list-style: none;
+}
+.footer__phones ul li {
+  margin-bottom: 1rem;
+}
+.footer__phones ul li i {
+  margin-right: 1rem;
+}
+
+.footer__sitemap {
+  flex: 1;
+}
+
+.footer__sitemap ul {
+  list-style: none;
+  columns: 2;
+}
+
+.footer__sitemap ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer__sitemap ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer__social {
+  flex: 1;
+}
+.footer__social i {
+  margin-right: 2rem;
+}

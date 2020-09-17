@@ -7,6 +7,8 @@ con las propiedades de éste archivo*/
 @import url("./button.css");
 @import url("./tutorial.css");
 @import url("./comments.css");
+@import url("./suscribe.css");
+@import url("./footer.css");
 * {
   margin: 0;
   box-sizing: border-box;
