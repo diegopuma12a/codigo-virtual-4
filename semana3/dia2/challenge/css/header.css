@@ -11,6 +11,9 @@
 /*<nav>*/
 .header__nav {
 }
+.header__nav p {
+  display: none;
+}
 
 /*<ul>*/
 .header__list {

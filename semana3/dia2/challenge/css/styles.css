@@ -101,3 +101,37 @@ body {
   }
 }
 
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    margin-bottom: 3rem;
+    justify-content: center;
+  }
+  .header__nav p {
+    display: block;
+  }
+  .header__list {
+    display: none;
+  }
+  .header__nav:hover .header__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .header__nav:hover p {
+    display: none;
+  }
+}
+
+@media (max-width: 200px) {
+  body > * {
+    display: none;
+  }
+  body::after {
+    content: "Vaya a molestar a su abuela";
+    color: white;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
