@@ -15,12 +15,14 @@ if (anio % 4 === 0) {
   if (anio % 100 !== 0) {
     console.log(`${anio} es bisiesto`);
   } else {
+    // cuando el anio es divisble enrtre 4 pero tmb entre 100
     console.log(`${anio} no es bisiesto`);
   }
 } else {
   if (anio % 400 === 0) {
     console.log(`${anio} es bisiesto`);
   } else {
+    // en cualquier otrioo caso
     console.log(`${anio} no es bisiesto`);
   }
 }
