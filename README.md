@@ -6,7 +6,7 @@
 - [LAGAxyz](https://github.com/LAGAxyz)
 - [xSebas2601](https://github.com/xSebas2601)
 - [dannyalexis](https://github.com/dannyalexis)
-- JuanCayhoPaucar
+- [JuanCaychoPaucar](https://github.com/JuanCaychoPaucar)
 - [Velasquez4701](https://github.com/Velasquez4701)
 - [EduarCuri](https://github.com/EduarCuri)
 - [ALEX-JACHA](https://github.com/ALEX-JACHA)
