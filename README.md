@@ -1,4 +1,5 @@
 # Codigo virtual 4 -FrontEnd
+
 -Repositorio Oficial del grupo 4 de Codigo Virtual
 
 - [ctorresmendoza24](https://github.com/ctorresmendoza24)
@@ -20,6 +21,7 @@
 - [AnthonyDval](https://github.com/AnthonyDval)
 - dannyscamayta
 - miriverosr
+- [monicaferrarig](https://github.com/monicaferrarig/)
 - [FabianQS](https://github.com/FabianQS)
 - [dmarinel](https://github.com/dmarinel)
 - [nzavaletac](https://github.com/nzavaletac)
