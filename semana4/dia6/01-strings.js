@@ -113,11 +113,9 @@ posicionesDeDiablo2();
  * sin importar que sean mayuscuclas o minusculas
  */
 
-
 /**
  * Función que imprime la cantidad de palabras que tenga una frase
  */
-
 
 /**
  *Función que imprime si una frase es un palíndromo
@@ -128,5 +126,42 @@ posicionesDeDiablo2();
   radar
   amor a roma
   la ruta natural
- */
 
+  HINT:
+  -- antes de cualqueiera de las dos formas, quitarle los espacios intermedios
+  ¿cómo?
+  recorrer toda la cadena e ir sumando letra a letra un nuevo string
+  y cada vez que se encuentre un espacio en blanco, saltar a la sigueinte
+  iteración
+
+  forma 1: 
+  - Recorrer toda la cadena de caracteres desde el final hasta el inicio,
+    en cada iteración, ir sumando un string que incialmene esté vacío con 
+    cada nuevo caracter. Al final de todas las iteraciones, comparar el 
+    string original con el string creado en el ciclo for
+  forma 2:
+  - Recorrer toda la cadena de caracteres, desde el inicio hasta la mitad
+  de la cadena y comparar en cada iteración por ejemplo lo siguiente:
+  Iteración 1:
+  posición 0 con posición length-0
+  Iteración 2:
+  posición 1 con posición length-1
+  Iteración 3:
+  posición 2 con posición lentgh-2
+  y así sucesivamente... en cada iteración deben de compararse que ambos
+  caracteres son iguales.
+*/
+
+/**
+ * string.trim()
+ * retorna la misma cadena sin incluir los espacios en blanco
+ * TANTO AL FINAL COMO AL INICIO
+ * NO LOS ESPACIOS INTERMEDIOS
+ * */
+
+let frase2 = "  cualquier frase interna ";
+console.log(frase2);
+console.log(`${frase2.trim()}`);
+
+// string.chartAt(9)
+// string[9]
