@@ -2,6 +2,7 @@ const formulario = document.getElementById("formulario");
 const link = document.getElementById("link");
 const inputNombre = document.getElementById("inputNombre");
 const inputApellido = document.getElementById("inputApellido");
+const tbody = document.getElementById("tbody");
 let usuarios = [];
 
 const redibujarTbody = () => {
@@ -16,6 +17,16 @@ const redibujarTbody = () => {
    *     con el string creado
    *  6. Reto: darle estilos a las tablas
    */
+  tbody.innerHTML = "";
+  let contenido = "";
+  usuarios.forEach((usu, i) => {
+    contenido = contenido + `<tr>
+                                <td>${i+1}</td>
+                                <td>${usu.nombre}</td>
+                                <td>${usu.apellido}</td>
+                              </tr>`;
+  });
+  tbody.innerHTML = contenido;
 };
 
 /**
@@ -42,6 +53,7 @@ formulario.addEventListener("submit", (evento) => {
   console.log(usuarios);
   //RETO: llamar a una función que redibuje el tbody cada vez
   // que nuestro arreglo de usuarios es alterado (cambia de elementos)
+  redibujarTbody();
 });
 
 link.onclick = (evento) => {
