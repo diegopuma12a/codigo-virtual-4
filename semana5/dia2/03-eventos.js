@@ -28,6 +28,7 @@ btn1.onclick = () => {
 // información que trae un evento
 const btn2 = document.getElementById("btn2");
 btn2.onclick = (evento) => {
+  console.log(evento);
   /**
    * Información que produce un evento
    */
@@ -46,4 +47,26 @@ btn2.onclick = (evento) => {
   console.log(evento.clientX);
   console.log(`** evento.clientY **`);
   console.log(evento.clientY);
+
+  /**
+   * evento.offsetX = coordenada en X respecto del elemento en px en donde se hizo
+   * clic
+   * evento.offsetY = coordenada en Y respecto del elemento en px en donde se hizo
+   * clic
+   */
+
+  console.log(`** evento.offsetX **`);
+  console.log(evento.offsetX);
+  console.log(`** evento.offsetY **`);
+  console.log(evento.offsetY);
+
+  /**
+   * evento.altKey = retorna true si el evento ha sido ejecutado con
+   * la ayuda de la tecla ALT, caso contrario, retorna false
+   */
+  console.log(`** evento.altKey **`);
+  console.log(evento.altKey);
 };
+
+
+

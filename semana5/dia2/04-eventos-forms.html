@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #444;
+      }
+      form {
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 1rem;
+        max-width: 500px;
+        margin: auto;
+        box-shadow: 0px 0px 20px #bbb;
+        padding: 2rem;
+      }
+      form input {
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="formulario">
+      <label for="">Nombre:</label>
+      <input type="text" placeholder="Ingrese nombre" id="inputNombre" />
+
+      <label for="">Apellido</label>
+      <input type="text" placeholder="Ingrese apellido" id="inputApellido" />
+
+      <a href="https://www.google.com" id="link"> ¿Olvidaste tu contraseña? </a>
+      <br />
+
+      <!-- un formulario sólo debe tener 1 submit -->
+      <button type="submit">Crear Usuario</button>
+      <button type="button">Cancelar</button>
+    </form>
+    <section>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Nro</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </section>
+
+    <script src="./04-eventos-forms.js"></script>
+  </body>
+</html>
