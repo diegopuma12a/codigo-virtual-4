@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .borde {
+        border: 1px solid #ddd;
+      }
+      tbody tr:nth-child(odd) {
+        background-color: #eee;
+      }
+      tbody tr:hover {
+        background-color: #dfdfdf;
+      }
+      table.borde {
+        /*si dos bordes se encuentran contiguos
+        que se hagan un solo borde*/
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th.borde,
+      td.borde {
+        padding: 15px;
+      }
+      td img {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul id="navLista"></ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Lista de Usuarios</h2>
+        <hr />
+        <table class="borde">
+          <thead>
+            <tr>
+              <th class="borde">Id</th>
+              <th class="borde">Correo</th>
+              <th class="borde">Nombre</th>
+              <th class="borde">Apellido</th>
+              <th class="borde">Fotito</th>
+              <th class="borde">Opciones</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="./01-dom-ejercicio1.js"></script>
+  </body>
+</html>
