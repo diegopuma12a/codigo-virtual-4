@@ -22,19 +22,36 @@
         margin-top: 1rem;
         margin-bottom: 1rem;
       }
+      .texto-rojo {
+        color: #dc143c;
+      }
+      .borde-rojo {
+        border: 3px solid #dc143c;
+      }
     </style>
   </head>
   <body>
     <form id="formulario">
       <label for="">Nombre:</label>
-      <input type="text" placeholder="Ingrese nombre" id="inputNombre" />
+      <input
+        type="text"
+        placeholder="Ingrese nombre"
+        id="inputNombre"
+        required
+      />
 
       <label for="">Apellido</label>
-      <input type="text" placeholder="Ingrese apellido" id="inputApellido" />
+      <input
+        type="text"
+        placeholder="Ingrese apellido"
+        id="inputApellido"
+        required
+      />
 
       <a href="https://www.google.com" id="link"> ¿Olvidaste tu contraseña? </a>
       <br />
-
+      <small class="texto-rojo" id="helper" hidden>Todos los campos deben estar llenos</small>
+      <hr />
       <!-- un formulario sólo debe tener 1 submit -->
       <button type="submit">Crear Usuario</button>
       <button type="button">Cancelar</button>
@@ -46,6 +63,7 @@
             <th>Nro</th>
             <th>Nombre</th>
             <th>Apellido</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody id="tbody"></tbody>
@@ -55,4 +73,3 @@
     <script src="./04-eventos-forms.js"></script>
   </body>
 </html>
-
