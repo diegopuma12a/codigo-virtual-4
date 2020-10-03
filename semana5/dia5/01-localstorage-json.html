@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #444;
+      }
+      form {
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 1rem;
+        max-width: 500px;
+        margin: auto;
+        box-shadow: 0px 0px 20px #bbb;
+        padding: 2rem;
+      }
+      form input {
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+      .texto-rojo {
+        color: #dc143c;
+      }
+      .borde-rojo {
+        border: 3px solid #dc143c;
+      }
+      .paper {
+        background-color: #fafafa;
+        padding: 2rem;
+        margin-top: 1rem;
+      }
+      table {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="formulario">
+      <label for="">Nombre:</label>
+      <input
+        type="text"
+        placeholder="Ingrese nombre"
+        id="inputNombre"
+        required
+      />
+
+      <label for="">Apellido</label>
+      <input
+        type="text"
+        placeholder="Ingrese apellido"
+        id="inputApellido"
+        required
+      />
+
+      <a href="https://www.google.com" id="link"> ¿Olvidaste tu contraseña? </a>
+      <br />
+      <small class="texto-rojo" id="helper" hidden
+        >Todos los campos deben estar llenos</small
+      >
+      <hr />
+      <!-- un formulario sólo debe tener 1 submit -->
+      <button type="submit">Crear Usuario</button>
+      <button type="button">Cancelar</button>
+    </form>
+    <section class="paper">
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Nro</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </section>
+
+    <script src="./01-localstorage-json.js"></script>
+  </body>
+</html>
