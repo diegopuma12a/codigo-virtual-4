@@ -7,16 +7,6 @@ const helper = document.getElementById("helper");
 
 let usuarios = [];
 
-const verificarStorage = () => {
-  // funcion que verifica si tenemos usuarios en el localstorge
-  // para settear el arreglo de usuarios
-  const usuariosStorage = localStorage.getItem("usuarios");
-  if (usuariosStorage !== null) {
-    // que sí existe la clave "usuarios"
-  }
-};
-verificarStorage();
-
 const limpiarErrores = () => {
   // quitar el estilo del brode roojo al formulario
 
@@ -103,6 +93,8 @@ const redibujarTbody = () => {
   // 1. convirtiendo un arreglo de objetos a un string
   const usuariosString = JSON.stringify(usuarios);
   console.log(usuariosString);
+  // 2. guardar los usuarios string en el localstorage
+  localStorage.setItem("usuarios", usuariosString);
 
   // colocar el cursor nuevamente en el campo del nombre para que el usaurio
   // esté listo para ingresar un siguiente registro
@@ -155,3 +147,18 @@ link.onclick = (evento) => {
   evento.preventDefault();
   console.log("Dieron clic al hipervinculo");
 };
+
+const verificarStorage = () => {
+  // funcion que verifica si tenemos usuarios en el localstorge
+  // para settear el arreglo de usuarios
+  const usuariosStorage = localStorage.getItem("usuarios");
+  if (usuariosStorage !== null) {
+    // que sí existe la clave "usuarios"
+    // 1. convertir un STRING a un objeto JSON
+    usuarios = JSON.parse(usuariosStorage);
+    console.log(usuarios);
+    redibujarTbody();
+  }
+};
+verificarStorage();
+
