@@ -18,6 +18,7 @@
     </h1>
     <hr />
     <main class="container">
+      <h3>Formulario de una sola columna</h3>
       <div class="row justify-content-center">
         <div class="col-6">
           <form>
@@ -28,6 +29,128 @@
                 class="form-control"
                 placeholder="Ejm: Seco de cabrito"
               />
+            </div>
+            <div class="form-group">
+              <label for="">Email</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Ejm: correo@correo.com"
+              />
+            </div>
+            <div class="form-group">
+              <label for="">Categoría</label>
+              <select name="" id="" class="form-control">
+                <option value="0">-- Seleccione --</option>
+                <option value="">Entrada</option>
+                <option value="">Postre</option>
+                <option value="">Plato de fondo</option>
+                <option value="">Bebida</option>
+              </select>
+              <small class="text-muted">* Este campo es obligatorio</small>
+            </div>
+            <div class="form-group">
+              <label for="">Ingredientes:</label>
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input
+                      id="inputCebolla"
+                      type="checkbox"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                </div>
+                <label for="inputCebolla" class="form-control">Cebolla</label>
+              </div>
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input
+                      id="inputAjos"
+                      type="checkbox"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                </div>
+                <label for="inputAjos" class="form-control">Ajos</label>
+              </div>
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input
+                      id="inputPollo"
+                      type="checkbox"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                </div>
+                <label for="inputPollo" class="form-control">Pollo 🐥</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="">Tiempo de Cocción</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input
+                      type="radio"
+                      name="radioTiempo"
+                      id="radio12"
+                      aria-label="Radio button for following text input"
+                    />
+                  </div>
+                </div>
+                <label for="radio12" class="form-control">De 1 a 2 Horas</label>
+              </div>
+
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input
+                      type="radio"
+                      name="radioTiempo"
+                      id="radio23"
+                      aria-label="Radio button for following text input"
+                    />
+                  </div>
+                </div>
+                <label for="radio23" class="form-control">De 2 a 3 Horas</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="">Preparación:</label>
+              <textarea cols="30" rows="10" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+              <button class="btn btn-primary" type="submit">Crear Plato</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <hr />
+      <h3>Formulario de dos columnas</h3>
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <form class="row">
+            <div class="form-group col-md-6">
+              <label for="">Nombres:</label>
+              <input type="text" class="form-control" placeholder="Nombres" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="">Apellidos:</label>
+              <input type="text" class="form-control" placeholder="Apellidos" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="">Nombres:</label>
+              <input type="text" class="form-control" placeholder="Nombres" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="">Apellidos:</label>
+              <input type="text" class="form-control" placeholder="Apellidos" />
             </div>
           </form>
         </div>
