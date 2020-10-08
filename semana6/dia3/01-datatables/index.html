@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css"
+    />
+    <title>Document</title>
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler d-lg-none"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      ></button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="dropdownId"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Dropdown</a
+            >
+            <div class="dropdown-menu" aria-labelledby="dropdownId">
+              <a class="dropdown-item" href="#">Action 1</a>
+              <a class="dropdown-item" href="#">Action 2</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="text"
+            placeholder="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+    <main class="container pt-5">
+      <h1 class="display-4 text-danger">Datatables</h1>
+      <hr />
+      <section class="row">
+        <div class="col-md-4">..........</div>
+        <div class="col-md-8">
+          <table class="table" id="miTabla">
+            <thead>
+              <tr>
+                <th>Cabecera 1</th>
+                <th>Cabecera 2</th>
+                <th>Cabecera 3</th>
+                <th>Cabecera 4</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Noah</td>
+                <td>Pollena Trocchia</td>
+                <td>Gambia</td>
+                <td>pharetra@dis.com</td>
+              </tr>
+              <tr>
+                <td>Keaton</td>
+                <td>Faizabad</td>
+                <td>Liechtenstein</td>
+                <td>magna.Suspendisse.tristique@molestiedapibusligula.net</td>
+              </tr>
+              <tr>
+                <td>Jonas</td>
+                <td>Guysborough</td>
+                <td>Kiribati</td>
+                <td>mauris@temporarcu.net</td>
+              </tr>
+              <tr>
+                <td>Lucian</td>
+                <td>Cape Breton Island</td>
+                <td>Hong Kong</td>
+                <td>dolor.Donec@Etiamimperdiet.net</td>
+              </tr>
+              <tr>
+                <td>Tyler</td>
+                <td>Gasteiz</td>
+                <td>Niue</td>
+                <td>Suspendisse.commodo.tincidunt@lobortisnisi.org</td>
+              </tr>
+              <tr>
+                <td>Hashim</td>
+                <td>Abergele</td>
+                <td>Greenland</td>
+                <td>dui.semper@SedmolestieSed.ca</td>
+              </tr>
+              <tr>
+                <td>Reese</td>
+                <td>Greymouth</td>
+                <td>Armenia</td>
+                <td>gravida.mauris.ut@ametmassa.co.uk</td>
+              </tr>
+              <tr>
+                <td>Ivan</td>
+                <td>Rosolini</td>
+                <td>Madagascar</td>
+                <td>mi.pede.nonummy@dolorsit.net</td>
+              </tr>
+              <tr>
+                <td>Quinn</td>
+                <td>Abbottabad</td>
+                <td>Croatia</td>
+                <td>vitae.erat.Vivamus@Aliquamauctor.co.uk</td>
+              </tr>
+              <tr>
+                <td>Gage</td>
+                <td>Huntingdon</td>
+                <td>Algeria</td>
+                <td>non@mi.net</td>
+              </tr>
+              <tr>
+                <td>Cole</td>
+                <td>Buckingham</td>
+                <td>Kazakhstan</td>
+                <td>ridiculus.mus@magnaLoremipsum.org</td>
+              </tr>
+              <tr>
+                <td>Yasir</td>
+                <td>Paradise</td>
+                <td>Lesotho</td>
+                <td>imperdiet.erat@non.org</td>
+              </tr>
+              <tr>
+                <td>Lane</td>
+                <td>Rance</td>
+                <td>Turkmenistan</td>
+                <td>orci.adipiscing@purusmauris.net</td>
+              </tr>
+              <tr>
+                <td>Colton</td>
+                <td>Ohain</td>
+                <td>Saint Lucia</td>
+                <td>ac@pharetrafelis.co.uk</td>
+              </tr>
+              <tr>
+                <td>Herman</td>
+                <td>Haut-Ittre</td>
+                <td>Tonga</td>
+                <td>dignissim.lacus.Aliquam@convallisestvitae.org</td>
+              </tr>
+              <tr>
+                <td>Ethan</td>
+                <td>Samsun</td>
+                <td>Côte D'Ivoire (Ivory Coast)</td>
+                <td>Donec@cursus.com</td>
+              </tr>
+              <tr>
+                <td>Gavin</td>
+                <td>South Perth</td>
+                <td>Kiribati</td>
+                <td>mollis@diamPellentesquehabitant.net</td>
+              </tr>
+              <tr>
+                <td>Drake</td>
+                <td>Esterzili</td>
+                <td>Barbados</td>
+                <td>Donec.est.Nunc@enim.ca</td>
+              </tr>
+              <tr>
+                <td>Basil</td>
+                <td>San Ramón</td>
+                <td>Sint Maarten</td>
+                <td>felis.purus@varius.co.uk</td>
+              </tr>
+              <tr>
+                <td>Emerson</td>
+                <td>Potsdam</td>
+                <td>Nepal</td>
+                <td>vel.turpis.Aliquam@rutrum.net</td>
+              </tr>
+              <tr>
+                <td>Hunter</td>
+                <td>Santa Inês</td>
+                <td>Bahrain</td>
+                <td>arcu.imperdiet@suscipit.org</td>
+              </tr>
+              <tr>
+                <td>Levi</td>
+                <td>Liedekerke</td>
+                <td>British Indian Ocean Territory</td>
+                <td>semper.pretium@Nullamenim.net</td>
+              </tr>
+              <tr>
+                <td>Beau</td>
+                <td>Geest-GŽrompont-Petit-RosiŽre</td>
+                <td>Samoa</td>
+                <td>dictum@Quisqueaclibero.co.uk</td>
+              </tr>
+              <tr>
+                <td>Clark</td>
+                <td>Kotelniki</td>
+                <td>Czech Republic</td>
+                <td>enim.non.nisi@eliteratvitae.ca</td>
+              </tr>
+              <tr>
+                <td>Zachary</td>
+                <td>Town of Yarmouth</td>
+                <td>Madagascar</td>
+                <td>Duis@Mauris.org</td>
+              </tr>
+              <tr>
+                <td>Drew</td>
+                <td>Castello Tesino</td>
+                <td>Svalbard and Jan Mayen Islands</td>
+                <td>nostra.per.inceptos@dictumeleifend.co.uk</td>
+              </tr>
+              <tr>
+                <td>Harper</td>
+                <td>Chesapeake</td>
+                <td>Peru</td>
+                <td>eget@Inatpede.ca</td>
+              </tr>
+              <tr>
+                <td>Sawyer</td>
+                <td>Munich</td>
+                <td>Saint Martin</td>
+                <td>eu.lacus@augueeutempor.org</td>
+              </tr>
+              <tr>
+                <td>Jordan</td>
+                <td>San Giovanni la Punta</td>
+                <td>Cape Verde</td>
+                <td>aliquam@vulputateeuodio.net</td>
+              </tr>
+              <tr>
+                <td>Edward</td>
+                <td>Hannut</td>
+                <td>French Southern Territories</td>
+                <td>velit.Sed.malesuada@orciDonecnibh.ca</td>
+              </tr>
+              <tr>
+                <td>Odysseus</td>
+                <td>Sibret</td>
+                <td>Botswana</td>
+                <td>sem.molestie.sodales@euismod.net</td>
+              </tr>
+              <tr>
+                <td>Gray</td>
+                <td>Galvarino</td>
+                <td>Uruguay</td>
+                <td>Donec@facilisisnon.ca</td>
+              </tr>
+              <tr>
+                <td>Jermaine</td>
+                <td>Maiolati Spontini</td>
+                <td>France</td>
+                <td>Maecenas.mi@miacmattis.edu</td>
+              </tr>
+              <tr>
+                <td>Isaiah</td>
+                <td>Yamuna Nagar</td>
+                <td>Dominica</td>
+                <td>odio.Nam@a.co.uk</td>
+              </tr>
+              <tr>
+                <td>Joshua</td>
+                <td>Lac-Serent</td>
+                <td>Tokelau</td>
+                <td>neque.et@Curabitur.org</td>
+              </tr>
+              <tr>
+                <td>Demetrius</td>
+                <td>Moxhe</td>
+                <td>Croatia</td>
+                <td>velit.in@infaucibusorci.co.uk</td>
+              </tr>
+              <tr>
+                <td>Fuller</td>
+                <td>Driekapellen</td>
+                <td>Virgin Islands, United States</td>
+                <td>ridiculus@tempus.co.uk</td>
+              </tr>
+              <tr>
+                <td>Caleb</td>
+                <td>Invergordon</td>
+                <td>Christmas Island</td>
+                <td>ligula@mauris.net</td>
+              </tr>
+              <tr>
+                <td>Devin</td>
+                <td>Burns Lake</td>
+                <td>Cameroon</td>
+                <td>a.malesuada@lectuspede.co.uk</td>
+              </tr>
+              <tr>
+                <td>Raymond</td>
+                <td>Gander</td>
+                <td>Liechtenstein</td>
+                <td>at@Phasellusnulla.com</td>
+              </tr>
+              <tr>
+                <td>Hayes</td>
+                <td>Wilmont</td>
+                <td>Montenegro</td>
+                <td>mollis.Duis.sit@sodalesMauris.org</td>
+              </tr>
+              <tr>
+                <td>Lester</td>
+                <td>Berwick-upon-Tweed</td>
+                <td>Trinidad and Tobago</td>
+                <td>consectetuer.cursus.et@purus.edu</td>
+              </tr>
+              <tr>
+                <td>Valentine</td>
+                <td>Lincoln</td>
+                <td>Niue</td>
+                <td>egestas.Fusce.aliquet@placerataugueSed.co.uk</td>
+              </tr>
+              <tr>
+                <td>Brody</td>
+                <td>Unnao</td>
+                <td>South Sudan</td>
+                <td>dolor@pedeNuncsed.org</td>
+              </tr>
+              <tr>
+                <td>Joshua</td>
+                <td>Swan Hill</td>
+                <td>Oman</td>
+                <td>Nunc.pulvinar@aarcu.edu</td>
+              </tr>
+              <tr>
+                <td>Elmo</td>
+                <td>Saint-Jean-Geest</td>
+                <td>Germany</td>
+                <td>Cras.sed@interdumfeugiatSed.edu</td>
+              </tr>
+              <tr>
+                <td>Edan</td>
+                <td>Virton</td>
+                <td>Luxembourg</td>
+                <td>lectus@Etiamgravidamolestie.co.uk</td>
+              </tr>
+              <tr>
+                <td>Sean</td>
+                <td>Gallodoro</td>
+                <td>Åland Islands</td>
+                <td>egestas.urna.justo@sedhendrerit.org</td>
+              </tr>
+              <tr>
+                <td>Tanner</td>
+                <td>Bismil</td>
+                <td>Holy See (Vatican City State)</td>
+                <td>nonummy.Fusce@faucibus.org</td>
+              </tr>
+              <tr>
+                <td>Murphy</td>
+                <td>Damoh</td>
+                <td>Brunei</td>
+                <td>lacus@pellentesqueSeddictum.com</td>
+              </tr>
+              <tr>
+                <td>Dillon</td>
+                <td>Marburg</td>
+                <td>Cuba</td>
+                <td>accumsan.convallis.ante@sedpedeCum.edu</td>
+              </tr>
+              <tr>
+                <td>Ahmed</td>
+                <td>Croydon</td>
+                <td>Christmas Island</td>
+                <td>nisl.arcu.iaculis@rutrumeu.net</td>
+              </tr>
+              <tr>
+                <td>Hakeem</td>
+                <td>Holywell</td>
+                <td>Senegal</td>
+                <td>eget.metus@augueSed.co.uk</td>
+              </tr>
+              <tr>
+                <td>Harding</td>
+                <td>Raichur</td>
+                <td>Sao Tome and Principe</td>
+                <td>Nam.ac.nulla@necurna.ca</td>
+              </tr>
+              <tr>
+                <td>Roth</td>
+                <td>Yeongju</td>
+                <td>Antarctica</td>
+                <td>urna@eratSed.edu</td>
+              </tr>
+              <tr>
+                <td>Melvin</td>
+                <td>Joué-lès-Tours</td>
+                <td>Mauritania</td>
+                <td>enim@necleoMorbi.edu</td>
+              </tr>
+              <tr>
+                <td>Keegan</td>
+                <td>Allerona</td>
+                <td>Senegal</td>
+                <td>Duis@pedesagittisaugue.edu</td>
+              </tr>
+              <tr>
+                <td>Justin</td>
+                <td>Minderhout</td>
+                <td>Montserrat</td>
+                <td>dis.parturient.montes@Nuncmauris.org</td>
+              </tr>
+              <tr>
+                <td>Ahmed</td>
+                <td>Eckville</td>
+                <td>Montserrat</td>
+                <td>blandit@vitaealiquetnec.ca</td>
+              </tr>
+              <tr>
+                <td>Caesar</td>
+                <td>Laval</td>
+                <td>Burundi</td>
+                <td>Quisque@lacinia.com</td>
+              </tr>
+              <tr>
+                <td>Ryder</td>
+                <td>Casciana Terme</td>
+                <td>Ethiopia</td>
+                <td>leo@Nullamscelerisque.com</td>
+              </tr>
+              <tr>
+                <td>Hall</td>
+                <td>Sonnino</td>
+                <td>Jersey</td>
+                <td>eros.Nam@quis.edu</td>
+              </tr>
+              <tr>
+                <td>Calvin</td>
+                <td>Goderich</td>
+                <td>Martinique</td>
+                <td>ullamcorper@quam.edu</td>
+              </tr>
+              <tr>
+                <td>Simon</td>
+                <td>San Vicente de Cañete</td>
+                <td>Colombia</td>
+                <td>ultricies.sem@utpellentesque.co.uk</td>
+              </tr>
+              <tr>
+                <td>Fitzgerald</td>
+                <td>Kohat</td>
+                <td>Micronesia</td>
+                <td>Nunc.mauris.Morbi@ligulaelitpretium.ca</td>
+              </tr>
+              <tr>
+                <td>Tanek</td>
+                <td>Heppignies</td>
+                <td>Tokelau</td>
+                <td>consectetuer.euismod@SedmolestieSed.org</td>
+              </tr>
+              <tr>
+                <td>Thane</td>
+                <td>Guben</td>
+                <td>Poland</td>
+                <td>lectus@eterosProin.ca</td>
+              </tr>
+              <tr>
+                <td>Kareem</td>
+                <td>Scheggino</td>
+                <td>Slovenia</td>
+                <td>malesuada.ut.sem@convallisligulaDonec.org</td>
+              </tr>
+              <tr>
+                <td>Kadeem</td>
+                <td>100 Mile House</td>
+                <td>Sudan</td>
+                <td>luctus.vulputate@molestie.co.uk</td>
+              </tr>
+              <tr>
+                <td>Christopher</td>
+                <td>Lakeshore</td>
+                <td>Uganda</td>
+                <td>Mauris@Cras.org</td>
+              </tr>
+              <tr>
+                <td>Baker</td>
+                <td>Jaranwala</td>
+                <td>Ireland</td>
+                <td>varius.ultrices@arcu.net</td>
+              </tr>
+              <tr>
+                <td>Drew</td>
+                <td>Sivry</td>
+                <td>Saint Martin</td>
+                <td>nunc.sed@Suspendisse.net</td>
+              </tr>
+              <tr>
+                <td>Carlos</td>
+                <td>Cusco</td>
+                <td>Dominica</td>
+                <td>nisl.sem@variusorci.net</td>
+              </tr>
+              <tr>
+                <td>Marvin</td>
+                <td>Veldegem</td>
+                <td>Swaziland</td>
+                <td>nec.luctus.felis@velpede.ca</td>
+              </tr>
+              <tr>
+                <td>Joel</td>
+                <td>Davenport</td>
+                <td>Heard Island and Mcdonald Islands</td>
+                <td>dictum.sapien.Aenean@CraspellentesqueSed.edu</td>
+              </tr>
+              <tr>
+                <td>Orlando</td>
+                <td>Pointe-au-Pic</td>
+                <td>Macedonia</td>
+                <td>facilisis.magna.tellus@inmolestie.org</td>
+              </tr>
+              <tr>
+                <td>Keith</td>
+                <td>San Ignacio</td>
+                <td>Djibouti</td>
+                <td>a@aliquet.ca</td>
+              </tr>
+              <tr>
+                <td>Chadwick</td>
+                <td>Minervino di Lecce</td>
+                <td>Nigeria</td>
+                <td>id.ante.dictum@sagittis.net</td>
+              </tr>
+              <tr>
+                <td>Channing</td>
+                <td>Municipal District</td>
+                <td>Brunei</td>
+                <td>pede@euodio.co.uk</td>
+              </tr>
+              <tr>
+                <td>Brady</td>
+                <td>Gießen</td>
+                <td>Belarus</td>
+                <td>varius@iderat.co.uk</td>
+              </tr>
+              <tr>
+                <td>Lucian</td>
+                <td>Santarém</td>
+                <td>Ethiopia</td>
+                <td>Nam.nulla.magna@a.org</td>
+              </tr>
+              <tr>
+                <td>Hayes</td>
+                <td>Corby</td>
+                <td>Monaco</td>
+                <td>Vivamus.nisi@risus.com</td>
+              </tr>
+              <tr>
+                <td>Ashton</td>
+                <td>Mglin</td>
+                <td>French Guiana</td>
+                <td>Quisque.libero@Duis.net</td>
+              </tr>
+              <tr>
+                <td>Travis</td>
+                <td>Lehri</td>
+                <td>Grenada</td>
+                <td>fermentum@euenim.ca</td>
+              </tr>
+              <tr>
+                <td>Dale</td>
+                <td>Vespolate</td>
+                <td>Kazakhstan</td>
+                <td>faucibus.ut.nulla@felis.org</td>
+              </tr>
+              <tr>
+                <td>Alec</td>
+                <td>Dion-Valmont</td>
+                <td>Antarctica</td>
+                <td>magna.Lorem@Nulla.org</td>
+              </tr>
+              <tr>
+                <td>Basil</td>
+                <td>Lanaken</td>
+                <td>Austria</td>
+                <td>dictum.placerat.augue@risusNunc.net</td>
+              </tr>
+              <tr>
+                <td>Colton</td>
+                <td>Wunstorf</td>
+                <td>Cyprus</td>
+                <td>Fusce@Integerinmagna.com</td>
+              </tr>
+              <tr>
+                <td>Theodore</td>
+                <td>Zweibrücken</td>
+                <td>Falkland Islands</td>
+                <td>nec.luctus@In.edu</td>
+              </tr>
+              <tr>
+                <td>Macon</td>
+                <td>Aisemont</td>
+                <td>Laos</td>
+                <td>Suspendisse.commodo.tincidunt@accumsan.com</td>
+              </tr>
+              <tr>
+                <td>Palmer</td>
+                <td>Rotorua</td>
+                <td>Argentina</td>
+                <td>Curae.Phasellus.ornare@placerat.edu</td>
+              </tr>
+              <tr>
+                <td>Caesar</td>
+                <td>Marche-les-Dames</td>
+                <td>Syria</td>
+                <td>Mauris.non.dui@semper.co.uk</td>
+              </tr>
+              <tr>
+                <td>David</td>
+                <td>Stamford</td>
+                <td>Lebanon</td>
+                <td>non@nonante.org</td>
+              </tr>
+              <tr>
+                <td>Byron</td>
+                <td>Crewe</td>
+                <td>Iraq</td>
+                <td>lorem@blanditatnisi.ca</td>
+              </tr>
+              <tr>
+                <td>Geoffrey</td>
+                <td>Macklin</td>
+                <td>Austria</td>
+                <td>eu@pedeblandit.edu</td>
+              </tr>
+              <tr>
+                <td>Chandler</td>
+                <td>Amqui</td>
+                <td>Faroe Islands</td>
+                <td>interdum.Nunc.sollicitudin@utodiovel.ca</td>
+              </tr>
+              <tr>
+                <td>Vincent</td>
+                <td>Charny</td>
+                <td>Reunion</td>
+                <td>tortor@euligula.org</td>
+              </tr>
+              <tr>
+                <td>Lucius</td>
+                <td>Deurne</td>
+                <td>Saint Lucia</td>
+                <td>auctor.Mauris.vel@dolordolor.org</td>
+              </tr>
+              <tr>
+                <td>Amal</td>
+                <td>Uppingham. Cottesmore</td>
+                <td>Nepal</td>
+                <td>Curabitur.egestas.nunc@bibendumsedest.ca</td>
+              </tr>
+              <tr>
+                <td>Dennis</td>
+                <td>Baileux</td>
+                <td>Anguilla</td>
+                <td>pharetra.nibh@magna.com</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"
+    ></script>
+
+    <script>
+      $("#miTabla").DataTable();
+    </script>
+  </body>
+</html>
