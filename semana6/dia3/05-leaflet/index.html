@@ -9,72 +9,24 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-    <!-- CSS FLICKITY -->
+    <!-- CSS leaflet -->
     <link
       rel="stylesheet"
-      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
     />
 
     <style>
-      .carousel-cell {
-        width: 25%;
-        text-align: center;
-        margin-right: 1rem;
-        
-      }
-      .img-modal {
-        max-width: 100%;
+      #mapid {
+        height: 300px;
       }
     </style>
 
     <title>Document</title>
   </head>
-  <body class="bg-dark">
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="modalPelicula"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modelTitleId"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-md-5">
-                  <img
-                    src=".........."
-                    alt=""
-                    id="modalImg"
-                    class="img-modal"
-                  />
-                </div>
-                <div class="col-md-7">
-                  <h4 id="modalTitulo">Titulo</h4>
-                  <p id="modalSinopsis">Sinopsis</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Navbar</a>
       <button
         class="navbar-toggler d-lg-none"
@@ -125,21 +77,11 @@
     </nav>
 
     <main class="container">
-      <h1 class="display-4 text-light">Flickity</h1>
-      <hr class="bg-light" />
+      <h1 class="display-4 text-danger">Leaflet</h1>
+      <hr />
       <section class="row">
         <div class="col-12">
-          <div class="main-carousel" id="miCarrusel">
-            <!-- <div class="carousel-cell">
-              <img src="https://via.placeholder.com/400x200/FFFFFF" alt="" />
-            </div>
-            <div class="carousel-cell">
-              <img src="https://via.placeholder.com/400x200/FFFFFF" alt="" />
-            </div>
-            <div class="carousel-cell">
-              <img src="https://via.placeholder.com/400x200/FFFFFF" alt="" />
-            </div> -->
-          </div>
+          <div id="mapid"></div>
         </div>
       </section>
     </main>
@@ -159,10 +101,13 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
-    <!-- JS FLICKITY -->
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <!-- My own JavaScript -->
-    <script src="./js/data-peliculas.js"></script>
+    <!-- JS leaflet -->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <!-- my own js -->
     <script src="./js/index.js"></script>
   </body>
 </html>
