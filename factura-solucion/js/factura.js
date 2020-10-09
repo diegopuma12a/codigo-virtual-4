@@ -20,6 +20,18 @@ let arregloProductos = [
   { id: 4, nombre: "Tecla retroiluminadio HP", precio: 25.8 },
 ];
 
+const verificarFacturasLocalStorage = () => {
+  const facturasLS = JSON.parse(localStorage.getItem("facturas"));
+  // if (facturasLS) {
+  //   facturas = facturasLS;
+  // }
+
+  // forma 2
+
+  facturas = facturasLS || [];
+};
+verificarFacturasLocalStorage();
+
 const llenarProductos = () => {
   arregloProductos.forEach((p) => {
     const option = document.createElement("option");
@@ -59,13 +71,54 @@ const redibujarTabla = () => {
                       <td>${detalle.pUnit}</td>
                       <td>${detalle.pTotal}</td>`;
     let tdEliminar = document.createElement("td");
+
     let botonEliminar = document.createElement("button");
     botonEliminar.classList.add("btn", "btn-danger");
     botonEliminar.innerText = "Eliminar";
+    botonEliminar.onclick = () => {
+      eliminarDetalleById(detalle.descripcion);
+    };
+
     tdEliminar.appendChild(botonEliminar);
     fila.appendChild(tdEliminar);
     cuerpoTabla.appendChild(fila);
   });
+};
+
+const eliminarDetalleById = (id) => {
+  arregloDetalle = arregloDetalle.filter((detalle) => {
+    if (+id !== +detalle.descripcion) {
+      return detalle;
+    }
+  });
+  redibujarTabla();
+};
+
+const agregarDetalle = (objDetalle) => {
+  // buscar si el objeto detalle ya existía en el arregloDetalle
+  // de ser así, sumar las cantidad para sólo aparezca una vez en el arreglo
+
+  const resultado = arregloDetalle.find((detalle) => {
+    if (+objDetalle.descripcion === +detalle.descripcion) {
+      return detalle;
+    }
+  });
+
+  if (resultado) {
+    arregloDetalle = arregloDetalle.map((detalle) => {
+      if (+detalle.descripcion === +objDetalle.descripcion) {
+        return {
+          cant: +detalle.cant + +objDetalle.cant,
+          descripcion: detalle.descripcion,
+          pTotal: (+detalle.cant + +objDetalle.cant) * +detalle.pUnit,
+          pUnit: +detalle.pUnit,
+        };
+      }
+      return detalle;
+    });
+  } else {
+    arregloDetalle.push(objDetalle);
+  }
 };
 
 formDetalle.onsubmit = (e) => {
@@ -77,7 +130,9 @@ formDetalle.onsubmit = (e) => {
     pUnit: inputPUnitario.value,
     pTotal: inputPTotal.value,
   };
-  arregloDetalle.push(objDetalle);
+
+  agregarDetalle(objDetalle);
+
   console.log(arregloDetalle);
   redibujarTabla();
 };
@@ -98,6 +153,9 @@ btnGuardar.onclick = () => {
   formDetalle.reset();
   // guardarlo en el localStorage
   localStorage.setItem("facturas", JSON.stringify(facturas));
+  //borrar la tabla del tbody
+  arregloDetalle = [];
+  redibujarTabla();
 };
 
 selectDescripcion.onchange = () => {
@@ -110,5 +168,20 @@ selectDescripcion.onchange = () => {
 
   if (precio) {
     inputPUnitario.value = precio;
+    calcularTotal();
   }
+};
+
+const calcularTotal = () => {
+  const cantidad = +inputCantidad.value;
+  const pUnit = +inputPUnitario.value;
+  const total = cantidad * pUnit;
+  inputPTotal.value = total.toFixed(2);
+};
+
+inputCantidad.onkeyup = () => {
+  calcularTotal();
+};
+inputCantidad.onchange = () => {
+  calcularTotal();
 };
