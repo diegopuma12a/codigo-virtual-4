@@ -41,6 +41,11 @@ let pelicula = {
   overview:
     "Enola Holmes, una intrépida joven que busca a su madre, utiliza su brillante instinto investigador para superar a su hermano Sherlock y ayudar a un lord en su fuga.",
   release_date: "2020-09-23",
+  pais: {
+    lugar: "Estados Unidos",
+    lat: -12.15321,
+    lng: -54.353,
+  },
 };
 
 const imprimirSinopsis = ({ overview, title }) => {
@@ -53,3 +58,12 @@ const imprimirSinopsis = ({ overview, title }) => {
 };
 
 imprimirSinopsis(pelicula);
+
+// ejemplo:
+// destructurar pais y la longitud con una nueva variable de nombre "nuevaLongitud"
+let {
+  pais,
+  pais: { lng: nuevaLongitud },
+} = pelicula;
+console.log("longitud");
+console.log(nuevaLongitud);
