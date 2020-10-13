@@ -9,10 +9,31 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-
+    <style>
+      .cargando {
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    </style>
     <title>Document</title>
   </head>
   <body class="bg-light">
+    <div id="cargando" class="cargando" hidden>
+      <p class="display-4 text-white">Cargando...</p>
+      <div class="spinner-border text-light" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Navbar</a>
       <button
@@ -112,5 +133,7 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
