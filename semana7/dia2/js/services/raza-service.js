@@ -8,3 +8,17 @@ export const postRaza = (objRaza) => {
     },
   });
 };
+
+export const putRaza = (objRaza) => {
+  let objRazaNuevo = {
+    raza_nombre: objRaza.raza_nombre,
+  };
+
+  return fetch(`${URL_BACKEND}/raza/${objRaza.raza_id}`, {
+    method: "PUT",
+    body: JSON.stringify(objRazaNuevo),
+    headers: {
+      "Content-type": "Application/json",
+    },
+  });
+};
