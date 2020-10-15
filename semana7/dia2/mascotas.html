@@ -9,6 +9,10 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
 
     <title>Document</title>
   </head>
@@ -64,7 +68,7 @@
     </nav>
 
     <main class="container">
-      <h1 class="display-4 text-danger">MascotasApp - Raza</h1>
+      <h1 class="display-4 text-danger">MascotasApp - Mascotas</h1>
       <hr />
 
       <section class="row">
@@ -72,19 +76,49 @@
         <div class="col-12">
           <div class="card shadow">
             <div class="card-body">
-              <form class="row" id="formRaza">
-                <div class="form-group col-12">
-                  <label for="">Nombre de Raza:</label>
+              <form class="row" id="formMascota">
+                <div class="form-group col-md-4">
+                  <label for="">Nombre:</label>
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Ejm: Puddle"
+                    placeholder="Ejm: Tobi"
                     id="inputNombre"
                   />
                 </div>
+                <div class="form-group col-md-4">
+                  <label for="">Raza:</label>
+                  <select id="selectRaza" class="form-control">
+                    <option value="0">Seleccione</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="">Colores:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Ejm: Blanco, Negro, Gris"
+                    id="inputColores"
+                  />
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="">Edad:</label>
+                  <input type="number" class="form-control" id="inputEdad" />
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="">Tipo:</label>
+                  <select id="selectTipo" class="form-control">
+                    <option value="0">Seleccione</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="">Activo:</label>
+                  <!-- TO DO: Convertir en toggle de bootstap -->
+                  <input type="text" class="form-control" id="inputActivo" />
+                </div>
                 <div class="form-group col-12">
                   <button id="btnAccion" class="btn btn-dark">
-                    Crear Raza
+                    Crear Mascota
                   </button>
                 </div>
               </form>
@@ -130,7 +164,9 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!--select2 js  -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
-    <script src="./js/razas.js" type="module"></script>
+    <script src="./js/mascotas.js" type="module"></script>
   </body>
 </html>

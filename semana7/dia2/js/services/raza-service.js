@@ -1,4 +1,5 @@
 import { URL_BACKEND } from "./../variables.js";
+
 export const postRaza = (objRaza) => {
   return fetch(`${URL_BACKEND}/raza`, {
     method: "POST",
@@ -21,4 +22,14 @@ export const putRaza = (objRaza) => {
       "Content-type": "Application/json",
     },
   });
+};
+
+export const deleteRazaById = (raza_id) => {
+  return fetch(`${URL_BACKEND}/raza/${raza_id}`, {
+    method: "DELETE",
+  });
+};
+
+export const getRazas = () => {
+  return fetch(`${URL_BACKEND}/raza`);
 };
