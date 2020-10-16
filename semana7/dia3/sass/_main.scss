@@ -4,6 +4,17 @@
 }
 
 body{
-    background: $color1;
+    background: $white;
     font-family: 'Montserrat', sans-serif;
+}
+
+button{
+    
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: $color2;
+    color: $white;
 }
