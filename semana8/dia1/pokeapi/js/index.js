@@ -4,13 +4,15 @@ const tipos = document.getElementById("tipos");
 const filas = document.getElementById("filas");
 
 const dibujarPokemones = (pokemones) => {
+  filas.innerHTML = "";
+
   pokemones.forEach((objPokemon) => {
     let row = document.createElement("div");
     row.classList.add("row");
     row.innerHTML = `<div class="col-md-6 p-5">
     <div class="card border-0 shadow">
-      <div class="altura shadow">2.3m</div>
-      <div class="peso shadow">127.0kg</div>
+      <div class="altura shadow">${objPokemon.talla}m</div>
+      <div class="peso shadow">${objPokemon.peso}kg</div>
       <div class="card-body text-center">
         <figure>
           <img src="${objPokemon.foto}" alt=""/>
@@ -89,6 +91,10 @@ const getPokemones = async (urlType) => {
     pokemonesArray.push({
       nombre: dataPokemon.name,
       foto: dataPokemon.sprites.other["official-artwork"].front_default,
+      peso: (dataPokemon.weight / 10).toFixed(1),
+      talla: (dataPokemon.height / 10).toFixed(1),
+      // foto:
+      //   dataPokemon["sprites"]["other"]["official-artwork"]["fonrt_default"],
     });
   }
   dibujarPokemones(pokemonesArray);
@@ -111,4 +117,5 @@ const getTypes = async () => {
   const data = await peticion.json();
   dibujarTipos(data);
 };
+
 getTypes();
