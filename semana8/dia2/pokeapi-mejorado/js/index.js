@@ -11,6 +11,7 @@ const traerPokemon = async (elemento, url) => {
     // foto:
     //   dataPokemon["sprites"]["other"]["official-artwork"]["fonrt_default"],
   };
+
   elemento.innerHTML = `<div class="col-md-6 p-5">
   <div class="card border-0 shadow">
     <div class="altura shadow">${objPokemon.talla}m</div>
@@ -78,18 +79,17 @@ const traerPokemon = async (elemento, url) => {
     </div>
   </div>
 </div>`;
+  const row = document.getElementById(url);
+  io.unobserve(row);
 };
 
-/**
- * @type {IntersectionObserver}
- */
 let io = new IntersectionObserver(
   (entries) => {
-    entries.forEach(({ target: row, intersectionRatio }) => {
+    entries.forEach(({ target, intersectionRatio }) => {
       console.log(intersectionRatio);
       if (intersectionRatio > 0) {
-        let url = row.getAttribute("url");
-        traerPokemon(row, url);
+        let url = target.getAttribute("url");
+        traerPokemon(target, url);
       }
     });
   },
@@ -190,11 +190,12 @@ const dibujarPokemones = (pokemones) => {
 //   console.log(data);
 // };
 
-const dibujarRows = ({ pokemon: pokemones = [] }) => {
+const dibujarRows = ({ pokemon: pokemones }) => {
   pokemones.forEach((p) => {
     let row = document.createElement("div");
     row.classList.add("row");
     row.setAttribute("url", p.pokemon.url);
+    row.id = p.pokemon.url;
     row.innerHTML = `<div class="col-md-6 p-5">
     <div class="card border-0 shadow">
       <div class="altura shadow">Cargando...</div>
@@ -267,25 +268,12 @@ const dibujarRows = ({ pokemon: pokemones = [] }) => {
   });
 };
 
-const getPokemones = async (urlType) => {
-  const peticion = await fetch(urlType);
-  const data = await peticion.json();
-  dibujarRows(data);
-  // let pokemones = [...data.pokemon];
-  // let pokemonesArray = [];
-  // for (let i = 0; i < pokemones.length; i++) {
-  //   const peticion2 = await fetch(pokemones[i].pokemon.url);
-  //   const dataPokemon = await peticion2.json();
-  //   pokemonesArray.push({
-  //     nombre: dataPokemon.name,
-  //     foto: dataPokemon.sprites.other["official-artwork"].front_default,
-  //     peso: (dataPokemon.weight / 10).toFixed(1),
-  //     talla: (dataPokemon.height / 10).toFixed(1),
-  //     // foto:
-  //     //   dataPokemon["sprites"]["other"]["official-artwork"]["fonrt_default"],
-  //   });
-  // }
-  // dibujarPokemones(pokemonesArray);
+const getPokemones = (urlType) => {
+  fetch(urlType).then((peticion) => {
+    peticion.json().then((data) => {
+      dibujarRows(data);
+    });
+  });
 };
 
 const dibujarTipos = ({ results }) => {
