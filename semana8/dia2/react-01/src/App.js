@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "./components/Header";
 import Articulos from "./components/Articulos";
+import "./App.css"
+
 const App = () => {
   const titulo = "Mi primer curso de React";
   const proximosCursos = ["Angular", "Webpack", "NextJS"];
