@@ -7,16 +7,42 @@ const App = () => {
 	const [canasta, setCanasta] = useState([]);
 
 	const agregarCanasta = (id) => {
-		console.log("Agregando a canasta");
-		console.log(`ID : ${id}`);
+
 		let objProducto = productos.find(p => p.id === id);
-		console.log(objProducto);
-
 		let copiaCanasta = [...canasta];
-		copiaCanasta.push(objProducto);
+		// revisar si el producto ya existía en la canasta de productos
+		let productoExistente = canasta.find(p => p.id === id);
 
+		if (productoExistente) {
+			copiaCanasta = copiaCanasta.map((p) => {
+				if (p.id === id) {
+					p.cantidad += 1;
+					return p;
+				} else {
+					return p;
+				}
+			})
+		} else {
+			copiaCanasta.push({
+				...objProducto,
+				cantidad: 1
+			});
+		}
 		setCanasta(copiaCanasta);
 	};
+
+	const eliminarProducto = (id) => {
+		/**
+		 * 1. obtener una copia de la canasta
+		 * 2. en la copia de la canasta, filtrar todos los elementos con id diferente al que recibo
+		 * por parámetros
+		 * 3. finalmanete, actualizar la canasta con la función setCanasta, con los nuevos valores
+		 * 4. no olvidar pasar como prop al Carrito, la función eliminarProducto
+		 */
+		let canastaCopia = [...canasta];
+		canastaCopia = canastaCopia.filter(p => p.id !== id);
+		setCanasta(canastaCopia)
+	}
 
 	const productos = [
 
@@ -32,7 +58,7 @@ const App = () => {
 			<Contador />
 			<hr />
 			<Productos productos={productos} agregarCanasta={agregarCanasta} />
-			<Carrito canasta={canasta} />
+			<Carrito canasta={canasta} eliminarProducto={eliminarProducto} />
 		</div>
 	);
 };

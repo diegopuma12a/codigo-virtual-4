@@ -64,3 +64,18 @@ body {
 	padding: 0.5rem 1rem;
 	border-bottom: 1px solid #aaa;
 }
+.btn-eliminar{
+	margin-left: 0.5rem;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	background-color: transparent;
+	border: 1px solid white;
+	outline: none;
+	color: white;
+	cursor: pointer;
+}
+.btn-eliminar:hover{
+	background-color: white;
+	color: #444;
+}
