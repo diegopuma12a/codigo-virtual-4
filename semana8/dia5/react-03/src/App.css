@@ -5,6 +5,11 @@
   color: #666;
   cursor: pointer;
 }
+.tipos__tipo.active{
+  background-color: #c02f27;
+  color: white;
+}
+
 .tipos__tipo:hover {
   background-color: #c02f27;
   color: white;

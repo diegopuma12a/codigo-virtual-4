@@ -1,14 +1,26 @@
 import React, { useEffect, useState } from 'react'
+import Cargando from './Cargando';
 
 const Pokemon = ({ pokemon: { name, url } }) => {
 
   const [pokemonData, setPokemonData] = useState({});
   const [cargando, setCargando] = useState(true);
+  const [hp, setHp] = useState(0);
+  const [ataque, setAtaque] = useState(0);
+  const [defensa, setDefensa] = useState(0);
+
 
   const traerPokemon = async () => {
     const peticion = await fetch(url);
     const data = await peticion.json();
     setPokemonData(data);
+
+    setTimeout(() => {
+      setHp(data.stats[0].base_stat);
+      setAtaque(data.stats[1].base_stat);
+      setDefensa(data.stats[2].base_stat);
+    }, 500);
+
     setCargando(false);
   }
 
@@ -16,14 +28,9 @@ const Pokemon = ({ pokemon: { name, url } }) => {
     traerPokemon();
   }, [url])
 
-  if (cargando) {
-    return (
-      <div className="row text-center">
-        <h3>Cargando...</h3>
-      </div>
-    )
-  } else {
-    return (
+  return (
+
+    cargando === true ? <Cargando /> :
       <div className="row">
         <div className="col-md-6 p-5">
           <div className="card border-0 shadow">
@@ -46,58 +53,49 @@ const Pokemon = ({ pokemon: { name, url } }) => {
         <div className="col-md-6">
           <div className="row align-items-center" style={{ height: "100%" }}>
             <div className="col-12">
+              <h6>Horse Power (Caballos de fuerza):</h6>
               <div className="progress">
                 <div
                   className="progress-bar bg-success"
                   role="progressbar"
-                  style={{ width: "25%" }}
-                  aria-valuenow="25"
+                  style={{ width: hp + "%" }}
+                  aria-valuenow={hp}
                   aria-valuemin="0"
                   aria-valuemax="100"
-                ></div>
+                > {hp}% </div>
               </div>
             </div>
             <div className="col-12">
+              <h6>Ataque:</h6>
               <div className="progress">
                 <div
                   className="progress-bar bg-warning"
                   role="progressbar"
-                  style={{ width: "25%" }}
-                  aria-valuenow="25"
+                  style={{ width: ataque + "%" }}
+                  aria-valuenow={ataque}
                   aria-valuemin="0"
                   aria-valuemax="100"
-                ></div>
+                >{ataque}%</div>
               </div>
             </div>
             <div className="col-12">
+              <h6>Defensa:</h6>
               <div className="progress">
                 <div
                   className="progress-bar bg-primary"
                   role="progressbar"
-                  style={{ width: "25%" }}
-                  aria-valuenow="25"
+                  style={{ width: defensa + "%" }}
+                  aria-valuenow={defensa}
                   aria-valuemin="0"
                   aria-valuemax="100"
-                ></div>
-              </div>
-            </div>
-            <div className="col-12">
-              <div className="progress">
-                <div
-                  className="progress-bar bg-dark"
-                  role="progressbar"
-                  style={{ width: "25%" }}
-                  aria-valuenow="25"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
+                >{defensa}%</div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    )
-  }
+      </div >
+  )
+
 }
 
 export default Pokemon

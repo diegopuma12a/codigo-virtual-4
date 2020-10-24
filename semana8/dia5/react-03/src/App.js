@@ -10,7 +10,7 @@ import Pokemones from './pokeapi/Pokemones';
 
 const App = () => {
 	const [pokemones, setPokemones] = useState([]);
-	const [url, setUrl] = useState("");
+	const [url, setUrl] = useState("https://pokeapi.co/api/v2/type/1/");
 
 	console.log("mostrando componente APP");
 
@@ -29,9 +29,9 @@ const App = () => {
 	}
 
 	useEffect(() => {
-		if (url !== "") {
-			llamarUrl();
-		}
+
+		llamarUrl();
+
 	}, [url]);
 
 
@@ -40,7 +40,7 @@ const App = () => {
 			<Header />
 			<main className="container-fluid mt-5">
 				<div className="row">
-					<Tipos modificarUrl={modificarUrl} />
+					<Tipos modificarUrl={modificarUrl} url={url} />
 					<Pokemones pokemones={pokemones} />
 				</div>
 			</main>

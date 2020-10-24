@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { URL_BACKEND } from './../environments/environments';
 
-const Tipos = ({ modificarUrl }) => {
+const Tipos = ({ modificarUrl, url }) => {
+
 	console.log("Mostrando componente TIPOS");
 	const [types, setTypes] = useState([]);
 	const getTipos = async () => {
@@ -19,8 +20,12 @@ const Tipos = ({ modificarUrl }) => {
 		<aside className="col-md-2 tipos">
 			{
 				types.map((tipo) => {
+
+					let clase = tipo.url === url ?
+						"tipos__tipo text-center mb-2 px-3 py-3 active" :
+						"tipos__tipo text-center mb-2 px-3 py-3";
 					return (
-						<div className="tipos__tipo text-center mb-2 px-3 py-3"
+						<div className={clase}
 							key={tipo.name}
 							onClick={() => {
 								modificarUrl(tipo.url);
