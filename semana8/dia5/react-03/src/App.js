@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Header from './pokeapi/Header';
@@ -9,17 +9,43 @@ import Pokemones from './pokeapi/Pokemones';
 // import HookEffect from './components/HookEffect';
 
 const App = () => {
-  return (
-    <>
-      <Header />
-      <main className="container-fluid mt-5">
-        <div className="row">
-          <Tipos />
-          <Pokemones />
-        </div>
-      </main>
-    </>
-  )
+	const [pokemones, setPokemones] = useState([]);
+	const [url, setUrl] = useState("");
+
+	console.log("mostrando componente APP");
+
+	const modificarUrl = (nuevaUrl) => {
+		setUrl(nuevaUrl);
+	}
+
+	const llamarUrl = async () => {
+		const peticion = await fetch(url);
+		const data = await peticion.json();
+
+		const arregloPokemones = data.pokemon.map(registro => {
+			return { ...registro.pokemon }
+		})
+		setPokemones(arregloPokemones);
+	}
+
+	useEffect(() => {
+		if (url !== "") {
+			llamarUrl();
+		}
+	}, [url]);
+
+
+	return (
+		<>
+			<Header />
+			<main className="container-fluid mt-5">
+				<div className="row">
+					<Tipos modificarUrl={modificarUrl} />
+					<Pokemones pokemones={pokemones} />
+				</div>
+			</main>
+		</>
+	)
 }
 
 export default App

@@ -11,6 +11,7 @@ const HookEffect = () => {
   const hacerFetch = () => {
     console.log(`https://pokemon/type/${type}`);
   }
+
   /**
    * useEffect es un hook que recibe 2 parametros
    * 1. callback, en el cual vamos a colocar el código que querramos
@@ -27,8 +28,6 @@ const HookEffect = () => {
   useEffect(() => {
     hacerFetch();
   }, [type]);
-
-
 
   const sumarContador = () => {
     setContador(contador + 1);
