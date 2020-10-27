@@ -2,6 +2,7 @@ import React from 'react'
 import Pokemon from './Pokemon'
 
 const Pokemones = ({ pokemones }) => {
+ 
   console.log("Mostrando componente POKEMONES");
   console.log(pokemones);
   return (
