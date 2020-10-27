@@ -1,12 +1,14 @@
 import React from 'react'
-import Formulario from './components/Formulario'
+import MascotasForm from './mascotas/MascotasForm'
 
 const App = () => {
   return (
     <>
 
       <main className="container">
-        <Formulario />
+
+        <MascotasForm />
+
       </main>
 
     </>
