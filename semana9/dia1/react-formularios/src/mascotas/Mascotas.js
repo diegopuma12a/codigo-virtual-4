@@ -17,7 +17,7 @@ const Mascotas = () => {
   return (
     <>
       <MascotasForm traerMascotas={traerMascotas} />
-      <MascotasTabla mascotas={mascotas} />
+      <MascotasTabla mascotas={mascotas} traerMascotas={traerMascotas} />
     </>
   )
 }

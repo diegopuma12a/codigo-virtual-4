@@ -15,6 +15,7 @@ export const postMascota = async (objMascota) => {
   //     "Content-type": "application/json"
   //   }
   // });
+  // const data = await peticion.json();
   // El código de arriba, es la misma petición sin usar AXIOS
 
   const resultado = await axios.post(`${URL_BACKEND}/mascota`,
@@ -24,4 +25,14 @@ export const postMascota = async (objMascota) => {
     }
   });
   return resultado.data;
+}
+
+export const deleteMascotaById = async (id) => {
+  // const respuesta = await axios.delete(`${URL_BACKEND}/mascota/${id}`);
+  // return respuesta.data;
+
+  const peticion = await fetch(`${URL_BACKEND}/mascota/${id}`, { method: "DELETE" });
+  const json = await peticion.json();
+  return json
+
 }
