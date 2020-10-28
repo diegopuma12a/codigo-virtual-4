@@ -1,22 +1,29 @@
 import React, { useState } from 'react'
 
+
+const formularioVacio = {
+  mascota_nombre: "",
+  mascota_raza: 0,
+  mascota_tipo: 0,
+  mascota_edad: 0,
+  mascota_colores: "",
+  mascota_activo: false
+}
+
 const MascotasForm = () => {
 
-  const [formulario, setFormulario] = useState({
-    nombre: "",
-    raza: 0,
-    tipo: 0,
-    edad: 0,
-    colores: "",
-    activo: false
-  });
+  const [formulario, setFormulario] = useState(formularioVacio);
 
-  const handleChange = () => {
-
+  const handleChange = (e) => {
+    let valor = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+    setFormulario({
+      ...formulario,
+      [e.target.name]: valor
+    });
   }
 
   return (
-    <div className="row">
+    <div className="row mt-4">
       <div className="col-12">
         <div className="card shadow">
           <div className="card-body">
@@ -26,16 +33,16 @@ const MascotasForm = () => {
                 <input type="text"
                   className="form-control"
                   placeholder="Ingrese nombre"
-                  name="nombre"
+                  name="mascota_nombre"
                   onChange={handleChange}
-                  value={formulario.nombre}
+                  value={formulario.mascota_nombre}
                 />
               </div>
               <div className="form-group col-md-6">
                 <label htmlFor="">Raza:</label>
                 <select className="form-control"
-                  name="raza"
-                  value={formulario.raza}
+                  name="mascota_raza"
+                  value={formulario.mascota_raza}
                   onChange={handleChange}>
                   <option value="0">Seleccione</option>
                   <option value="1">Bull Terrier</option>
@@ -45,24 +52,24 @@ const MascotasForm = () => {
                 <label htmlFor="">Colores:</label>
                 <input type="text"
                   className="form-control"
-                  name="colores"
+                  name="mascota_colores"
                   onChange={handleChange}
-                  value={formulario.colores}
+                  value={formulario.mascota_colores}
                   placeholder="Ingrese colores" />
               </div>
               <div className="form-group col-md-6">
                 <label htmlFor="">Edad</label>
                 <input type="number"
-                  name="edad"
-                  value={formulario.edad}
+                  name="mascota_edad"
+                  value={formulario.mascota_edad}
                   onChange={handleChange}
                   className="form-control" />
               </div>
               <div className="form-group col-md-6">
                 <label htmlFor="">Tipo</label>
                 <select className="form-control"
-                  value={formulario.tipo}
-                  name="tipo"
+                  value={formulario.mascota_tipo}
+                  name="mascota_tipo"
                   onChange={handleChange}>
                   <option value="0">Seleccione</option>
                   <option value="1">Perro</option>
@@ -77,8 +84,8 @@ const MascotasForm = () => {
                         type="checkbox"
                         // checked, es el campo análogo a value
                         // y sólo acepta valores booleanos (true/false)
-                        checked={formulario.activo}
-                        name="activo"
+                        checked={formulario.mascota_activo}
+                        name="mascota_activo"
                         onChange={handleChange}
                         aria-label="Checkbox for following text input"
                         id="checkActivo" />
@@ -86,6 +93,14 @@ const MascotasForm = () => {
                   </div>
                   <label htmlFor="checkActivo" className="form-control" >Activo</label>
                 </div>
+              </div>
+              <div className="form-group col-md-6">
+                <button className="btn btn-block btn-primary"
+                  type="submit">Crear Mascota</button>
+              </div>
+              <div className="form-group col-md-6">
+                <button className="btn btn-block btn-danger"
+                  type="button">Cancelar</button>
               </div>
             </form>
           </div>

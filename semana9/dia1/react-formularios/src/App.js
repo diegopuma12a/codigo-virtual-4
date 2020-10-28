@@ -1,13 +1,13 @@
 import React from 'react'
-import MascotasForm from './mascotas/MascotasForm'
+import Mascotas from './mascotas/Mascotas'
 
 const App = () => {
   return (
     <>
 
-      <main className="container">
+      <main className="container mt-4">
 
-        <MascotasForm />
+        <Mascotas />
 
       </main>
 
