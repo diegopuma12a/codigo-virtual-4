@@ -31,7 +31,7 @@ const MascotasTabla = ({ mascotas }) => {
                         <td>{m.mascota_raza}</td>
                         <td>{m.mascota_tipo}</td>
                         <td>{m.mascota_edad}</td>
-                        <td>{m.mascota_activo}</td>
+                        <td>{m.mascota_activo.toString()}</td>
                         <td>
                           <button className="btn btn-secondary mr-2">Editar</button>
                           <button className="btn btn-danger">Eliminarsh</button>

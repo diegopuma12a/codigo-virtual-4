@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-
+import Swal from "sweetalert2";
+import { getMascotas, postMascota } from './services/mascota';
 
 const formularioVacio = {
   mascota_nombre: "",
@@ -10,9 +11,10 @@ const formularioVacio = {
   mascota_activo: false
 }
 
-const MascotasForm = () => {
+const MascotasForm = ({ traerMascotas }) => {
 
   const [formulario, setFormulario] = useState(formularioVacio);
+  const [modo, setModo] = useState("crear");
 
   const handleChange = (e) => {
     let valor = e.target.type === "checkbox" ? e.target.checked : e.target.value;
@@ -22,12 +24,41 @@ const MascotasForm = () => {
     });
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (modo === "crear") {
+      Swal.fire({
+        title: "¿Registrar mascota?",
+        text: "Se guardará en la base de datos",
+        icon: "question",
+        showCancelButton: true
+      }).then(({ isConfirmed }) => {
+        if (isConfirmed) {
+          // crear el registro de la mascota
+          postMascota(formulario).then(data => {
+            if (data.mascota_id) {
+              traerMascotas();
+              setFormulario(formularioVacio);
+              Swal.fire({
+                title: "Registrado!",
+                text: "Mascota registrada correctamente",
+                icon: "success",
+                timer: 1500
+              });
+            }
+          })
+        }
+      })
+    }
+  }
+
+
   return (
     <div className="row mt-4">
       <div className="col-12">
         <div className="card shadow">
           <div className="card-body">
-            <form className="row">
+            <form className="row" onSubmit={handleSubmit}>
               <div className="form-group col-md-6">
                 <label htmlFor="">Nombre:</label>
                 <input type="text"
