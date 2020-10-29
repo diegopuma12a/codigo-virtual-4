@@ -5,6 +5,7 @@ import { getMascotas } from './services/mascota';
 const Mascotas = () => {
 
   const [mascotas, setMascotas] = useState([]);
+  const [mascotaEditar, setMascotaEditar] = useState(null);
 
   const traerMascotas = async () => {
     const data = await getMascotas();
@@ -16,8 +17,11 @@ const Mascotas = () => {
 
   return (
     <>
-      <MascotasForm traerMascotas={traerMascotas} />
-      <MascotasTabla mascotas={mascotas} traerMascotas={traerMascotas} />
+      <MascotasForm traerMascotas={traerMascotas}
+                    mascotaEditar={mascotaEditar} />
+      <MascotasTabla mascotas={mascotas}
+                      traerMascotas={traerMascotas}
+                      setMascotaEditar={setMascotaEditar} />
     </>
   )
 }

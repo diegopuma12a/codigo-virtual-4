@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Swal from "sweetalert2";
-import { getMascotas, postMascota } from './services/mascota';
+import { postMascota, putMascota } from './services/mascota';
 
 const formularioVacio = {
   mascota_nombre: "",
@@ -11,7 +11,7 @@ const formularioVacio = {
   mascota_activo: false
 }
 
-const MascotasForm = ({ traerMascotas }) => {
+const MascotasForm = ({ traerMascotas, mascotaEditar }) => {
 
   const [formulario, setFormulario] = useState(formularioVacio);
   const [modo, setModo] = useState("crear");
@@ -49,9 +49,51 @@ const MascotasForm = ({ traerMascotas }) => {
           })
         }
       })
+    } else {
+      // asumimos que estamos en el modo editar
+      Swal.fire({
+        title: "¿Editar?",
+        text: "¿Seguro que desea editar el registro de la mascota?",
+        icon: "question",
+        showCancelButton: true
+      }).then(({ isConfirmed }) => {
+        if (isConfirmed) {
+          putMascota({ ...formulario }).then((respuesta) => {
+            if (respuesta.status === 200) {
+
+              setFormulario(formularioVacio);
+              setModo("crear");
+              traerMascotas();
+
+              Swal.fire({
+                position: "top-end",
+                timer: 1000,
+                title: "Registro actualizado!",
+                icon: "success",
+                showConfirmButton: false,
+              });
+            }
+          })
+        }
+      })
     }
   }
 
+  // useEffect(() => {
+  //   console.log("use effect vacío");
+  // }, []);
+
+  // useEffect(() => {
+  //   console.log("Use effect cuando cambia el formulario");
+  // }, [formulario])
+
+  useEffect(() => {
+    console.log("Use effect cuando cambia la mascotaEditar");
+    if (mascotaEditar !== null) {
+      setFormulario(mascotaEditar);
+      setModo("editar");
+    }
+  }, [mascotaEditar]);
 
   return (
     <div className="row mt-4">
@@ -127,7 +169,10 @@ const MascotasForm = ({ traerMascotas }) => {
               </div>
               <div className="form-group col-md-6">
                 <button className="btn btn-block btn-primary"
-                  type="submit">Crear Mascota</button>
+                  type="submit">
+                  {modo === "crear" ? "Crear Mascota" : "Guardar Cambios"}
+
+                </button>
               </div>
               <div className="form-group col-md-6">
                 <button className="btn btn-block btn-danger"
