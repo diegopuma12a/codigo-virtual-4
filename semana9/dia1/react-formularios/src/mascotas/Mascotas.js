@@ -20,8 +20,9 @@ const Mascotas = () => {
       <MascotasForm traerMascotas={traerMascotas}
                     mascotaEditar={mascotaEditar} />
       <MascotasTabla mascotas={mascotas}
-                      traerMascotas={traerMascotas}
-                      setMascotaEditar={setMascotaEditar} />
+                  traerMascotas={traerMascotas}
+                  setMascotaEditar={setMascotaEditar}
+                  setMascotas={setMascotas} />
     </>
   )
 }

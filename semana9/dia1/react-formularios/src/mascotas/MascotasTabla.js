@@ -6,7 +6,7 @@ import Toggle from "react-toggle";
 import "react-toggle/style.css";
 import { useState } from 'react';
 
-const MascotasTabla = ({ mascotas, traerMascotas, setMascotaEditar }) => {
+const MascotasTabla = ({ mascotas, setMascotas, traerMascotas, setMascotaEditar }) => {
 
 
 
@@ -21,6 +21,7 @@ const MascotasTabla = ({ mascotas, traerMascotas, setMascotaEditar }) => {
         deleteMascotaById(id).then((data) => {
           // si la data tiene un atributo mascota_id, sí se ha eliminado
           if (data.mascota_id) {
+            setMascotas([]);
             traerMascotas();
             Swal.fire({
               title: "Eliminado!",
@@ -40,7 +41,22 @@ const MascotasTabla = ({ mascotas, traerMascotas, setMascotaEditar }) => {
       ...objMascota,
       mascota_activo: estado
     }).then(rpta => {
+
+      // actualizar el estado mascotas del componente Mascotas.js con las mascota
+      // que acaba de modificar su valor (campo: mascota_activo)
+
       if (rpta.status === 200) {
+
+        let nuevasMascotas = mascotas.map((m) => {
+          if (m.mascota_id === objMascota.mascota_id) {
+            console.log("cambiando estado");
+            m.mascota_activo = estado;
+          }
+          return m;
+        })
+
+        setMascotas(nuevasMascotas)
+
         Swal.fire({
           position: "top-end",
           icon: "success",
