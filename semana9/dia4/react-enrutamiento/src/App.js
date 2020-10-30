@@ -6,6 +6,7 @@ import Tipos from './screens/tipos/Tipos';
 import Home from './screens/home/Home';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NotFound from './screens/404/NotFound';
+import MascotaVer from './screens/mascotas/MascotaVer';
 
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
          / es más general que /mascotas
          /mascotas es más general que /mascotas/crear
          */}
+        <Route path={"/mascotas/:mascota_id"} component={MascotaVer} />
         <Route path={"/mascotas"} component={Mascotas} />
         <Route path={"/razas"} component={Razas} />
         <Route path={"/tipos"} component={Tipos} />
