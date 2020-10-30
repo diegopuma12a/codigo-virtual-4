@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -8,11 +9,30 @@ const Header = () => {
         aria-expanded="false" aria-label="Toggle navigation"></button>
       <div className="collapse navbar-collapse" id="collapsibleNavId">
         <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li className="nav-item active">
-            <a className="nav-link" href="!#">Home <span className="sr-only">(current)</span></a>
+          {/* Link > COmponente que sirve para redireccionarnos a una ruta específica, es igual a la 
+          etqueta <a></a> sin embargo, la lógica de react, usa LINK */}
+          {/* NavLink > Componente con las mismas facultades que el componente Link, sin embargo
+          tiene la propiedad activeClassName que sirve para colocar una clase en el link que esté 
+          activo, dependiendo de la ruta en la que nos encontremos */}
+          <li className="nav-item">
+            <NavLink to={"/"} exact
+              className="nav-link"
+              activeClassName="active">Inicio</NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="!#">Link</a>
+            <NavLink to={"/mascotas"}
+              className="nav-link"
+              activeClassName="active">Mascotas</NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to={"/tipos"}
+              className="nav-link"
+              activeClassName="active">Tipos</NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to={"/razas"}
+              className="nav-link"
+              activeClassName="active">Razas</NavLink>
           </li>
         </ul>
         <form className="form-inline my-2 my-lg-0">

@@ -4,7 +4,7 @@ import Mascotas from './screens/mascotas/Mascotas';
 import Razas from './screens/razas/Razas';
 import Tipos from './screens/tipos/Tipos';
 import Home from './screens/home/Home';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NotFound from './screens/404/NotFound';
 
 

@@ -1,10 +1,13 @@
 import React from 'react'
+import MascotasTabla from './components/MascotasTabla'
 
 const Mascotas = () => {
   return (
-    <div>
-      SCREEN DE MASCOTAS!
-    </div>
+    <main className="container">
+      <h1 className="display-4 text-danger mt-3"> Mascotas </h1>
+      <hr />
+      <MascotasTabla />
+    </main>
   )
 }
 
