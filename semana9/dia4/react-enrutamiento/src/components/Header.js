@@ -36,6 +36,11 @@ const Header = () => {
               className="nav-link"
               activeClassName="active">Razas</NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink to={"/citas"}
+              className="nav-link"
+              activeClassName="active">Citas</NavLink>
+          </li>
         </ul>
         <form className="form-inline my-2 my-lg-0">
           <input className="form-control mr-sm-2" type="text" placeholder="Search" />
