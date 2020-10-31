@@ -17,7 +17,9 @@ const MascotasTabla = (props) => {
   }
 
   const goToMascotasVer = (mascota_id) => {
-    
+    // NOTA: No confundir la función push() de los arreglos, con la función
+    // push del objeto "history", ésta última es para dedireccioanrnos de ruta
+    // programáticamente
     props.history.push(`/mascotas/${mascota_id}`);
   }
 

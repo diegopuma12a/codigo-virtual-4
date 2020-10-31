@@ -12,11 +12,9 @@ export const getMascotas = async () => {
 export const getMascotaById = async (mascota_id) => {
 
   const peticion = await fetch(`${URL_BACKEND}/mascota/${mascota_id}`);
-  const data = await peticion.json();
 
-  if (data.mascota_id) {
-    // significa que la mascota que estoy buscando, existe y ha llegado en el
-    // objeto data.
+  if (peticion.status === 200) {
+    const data = await peticion.json();
     const objRaza = await getRazaById(data.mascota_raza);
     const objTipo = await getTipoById(data.mascota_tipo);
     const objMascota = {
@@ -25,5 +23,7 @@ export const getMascotaById = async (mascota_id) => {
       objTipo: objTipo
     };
     return objMascota;
+  } else {
+    return null;
   }
 }
