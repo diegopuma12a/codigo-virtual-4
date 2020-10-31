@@ -6,7 +6,7 @@ const Mascotas = () => {
     <main className="container">
       <h1 className="display-4 text-danger mt-3"> Mascotas </h1>
       <hr />
-      <MascotasTabla />
+      <MascotasTabla x={6} />
     </main>
   )
 }

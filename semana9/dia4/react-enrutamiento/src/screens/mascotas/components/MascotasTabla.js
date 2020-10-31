@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { getMascotas } from '../../../services/mascotas';
 
-const MascotasTabla = () => {
+import { withRouter } from "react-router-dom";
+// La función withRouter es usada para obtener las propiedades de enrutamiento
+// (params, history, location, etc...) en un componente que NO haya sido 
+// renderizado directamente por el componente <Route></Route>
+
+const MascotasTabla = (props) => {
 
   const [mascotas, setMascotas] = useState([]);
 
@@ -9,6 +14,11 @@ const MascotasTabla = () => {
     getMascotas().then((data) => {
       setMascotas(data);
     });
+  }
+
+  const goToMascotasVer = (mascota_id) => {
+    
+    props.history.push(`/mascotas/${mascota_id}`);
   }
 
   useEffect(() => {
@@ -37,7 +47,10 @@ const MascotasTabla = () => {
                   <td>{m.mascota_colores}</td>
                   <td>{m.mascota_activo.toString()}</td>
                   <td>
-                    <button className="btn btn-secondary btn-block">
+                    <button className="btn btn-secondary btn-block"
+                      onClick={() => {
+                        goToMascotasVer(m.mascota_id);
+                      }}>
                       Ver Detalles
                     </button>
                   </td>
@@ -51,4 +64,6 @@ const MascotasTabla = () => {
   )
 }
 
-export default MascotasTabla
+// Cuando usamos la función withRouter como envoltura de un componente
+// el componente recibirá en sus props, todos los objetos de enrutamiento
+export default withRouter(MascotasTabla)
