@@ -1,13 +1,32 @@
 import React, { useReducer } from 'react'
+import ContadorContext from './contadorContext';
+import ContadorReducer from './contadorReducer';
 
-const ContadorState = () => {
+const ContadorState = (props) => {
 
-  const [state, setState] = useReducer(() => { }, 0);
+  const [state, dispatch] = useReducer(ContadorReducer, 0);
+
+  const restar = () => {
+    dispatch({
+      type: "RESTAR",
+    })
+  }
+  const sumar = () => {
+    dispatch({
+      type: "SUMAR"
+    })
+  }
 
   return (
-    <div>
+    <ContadorContext.Provider value={{
+      cuenta: state,
+      sumar: sumar,
+      restar: restar
+    }}>
 
-    </div>
+      {props.children}
+
+    </ContadorContext.Provider>
   )
 }
 
