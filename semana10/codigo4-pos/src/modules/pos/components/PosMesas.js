@@ -9,7 +9,10 @@ const PosMesas = () => {
 
   const traerMesas = async () => {
     const rpta = await getMesas();
-    console.log(rpta);
+    if (rpta.ok) {
+      setMesas(rpta.content);
+      setCargando(false);
+    }
   }
 
   useEffect(() => {
@@ -19,12 +22,12 @@ const PosMesas = () => {
   return (
     <div className="mesas">
       <ul className="mesas__lista">
-        <PosMesa />
-        <PosMesa />
-        <PosMesa />
-        <PosMesa />
-        <PosMesa />
-        <PosMesa />
+        {
+          cargando === true ? <span>cargando...</span> :
+            mesas.map(objMesa => (
+              <PosMesa key={objMesa.mesa_id} objMesa={objMesa} />
+            ))
+        }
       </ul>
       <div className="mesas__info"></div>
     </div>
