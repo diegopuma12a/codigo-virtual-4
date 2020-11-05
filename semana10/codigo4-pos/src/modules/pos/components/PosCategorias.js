@@ -1,10 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { getCategorias } from '../../../services/categoriasService';
+import MesaContext from '../context/mesa/mesaContext';
 
 const PosCategorias = () => {
 
+
   const [categorias, setCategorias] = useState([]);
   const [cargando, setCargando] = useState(true);
+
+  const {
+    globalObjCategoria,
+    seleccionarCategoriaGlobal
+  } = useContext(MesaContext);
 
   const traerCategorias = async () => {
     const data = await getCategorias();
@@ -23,10 +30,13 @@ const PosCategorias = () => {
         cargando ? <span>Cargando...</span> :
           categorias.map(objCategoria => (
             <button key={objCategoria.categoria_id}
-              className="boton boton-outline-primary">
+              className={`boton boton-outline-primary 
+                ${globalObjCategoria?.categoria_id === objCategoria.categoria_id ? "activo" : ""}`}
 
+              onClick={() => {
+                seleccionarCategoriaGlobal({ ...objCategoria })
+              }}>
               {objCategoria.categoria_nom}
-
             </button>
           ))
       }
