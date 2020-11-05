@@ -2,6 +2,7 @@ import React from 'react'
 import PosComandaItem from './PosComandaItem'
 
 const PosComanda = () => {
+  
   return (
     <div className="comanda">
       <h4 className="comanda__mesa">Mesa 01</h4>

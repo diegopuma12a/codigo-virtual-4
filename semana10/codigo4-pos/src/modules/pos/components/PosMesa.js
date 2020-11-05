@@ -3,10 +3,7 @@ import MesaContext from '../context/mesa/mesaContext';
 
 const PosMesa = ({ objMesa }) => {
 
-  const {
-    globalObjMesa,
-    seleccionarMesaGlobal
-  } = useContext(MesaContext);
+  const { globalObjMesa, seleccionarMesaGlobal } = useContext(MesaContext);
 
   console.log(globalObjMesa);
 

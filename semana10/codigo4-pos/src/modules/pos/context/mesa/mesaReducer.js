@@ -11,7 +11,11 @@ const MesaReducer = (stateActual, action) => {
         ...stateActual,
         globalObjCategoria: { ...action.data }
       }
+    case "ACTUALIZAR_GLOBAL_PEDIDOS":
+      return {
+        ...stateActual,
+        globalPedidos: [...action.data]
+      }
   }
-
 }
 export default MesaReducer;
