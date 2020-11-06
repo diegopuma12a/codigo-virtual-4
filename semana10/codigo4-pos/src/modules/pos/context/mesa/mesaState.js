@@ -101,6 +101,49 @@ const MesaState = (props) => {
 
   const restarPlato = (objPlato) => {
 
+    let { globalPedidos, globalObjMesa } = state;
+    if (globalObjMesa === null) return;
+
+    // buscamos un pedido que corresponda a la mesa seleccionada global
+    let pedidoActual = globalPedidos.find(pedido => pedido.mesa_id === globalObjMesa.mesa_id);
+    if (pedidoActual) {
+      // significa que sí existe un pedido para la mesa actual
+      // Ahora, verificamos si el plato que estoy restando, existe en el arreglo de platos
+      // del pedido actual.
+      pedidoActual.platos = pedidoActual.platos.filter(plato => {
+        if (plato.plato_id === objPlato.plato_id) {
+          // significa que encontré el plato que estoy tratando de restar
+          // Ahora, analizaremos si el plato, sólo tenía un ítem o tenía más items
+          if (plato.plato_cant === 1) {
+            // Cuando estamos dentro del método filter(),
+            // retornar undefined, es como no retornar el elemento , es decir, 
+            // dejamos de retornar el plato de la lista de platos.
+            return undefined;
+          } else {
+            plato.plato_cant--;
+            return plato;
+          }
+        }
+        return plato;
+      })
+
+      // luego de descontar un plato, cabe la posibilidad de que el arreglo de platos del
+      // pedido actual de la mesa seleccionada ya no tenga elementos (platos)...
+      // de ser caso, con la siguiente instrucción, eliminamos a ese pedido 
+      // del arreglo global de pedidos para evitar que la mesa tenga un petido con 0 platos.
+      if (pedidoActual.platos.length === 0) {
+        globalPedidos = globalPedidos.filter(pedido => pedido.mesa_id !== globalObjMesa.mesa_id)
+      }
+
+      dispatch({
+        type: "ACTUALIZAR_GLOBAL_PEDIDOS",
+        data: globalPedidos
+      })
+
+    }
+
+
+
   }
 
   const seleccionarMesaGlobal = (objMesa) => {
@@ -123,7 +166,8 @@ const MesaState = (props) => {
       globalPedidos: state.globalPedidos,
       seleccionarMesaGlobal,
       seleccionarCategoriaGlobal,
-      agregarPlato
+      agregarPlato,
+      restarPlato
     }}>
       {props.children}
     </MesaContext.Provider>
