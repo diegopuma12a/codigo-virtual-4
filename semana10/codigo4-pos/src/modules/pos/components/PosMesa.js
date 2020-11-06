@@ -5,8 +5,6 @@ const PosMesa = ({ objMesa }) => {
 
   const { globalObjMesa, seleccionarMesaGlobal } = useContext(MesaContext);
 
-  console.log(globalObjMesa);
-
   ////// alternativa para colocar la clase "activo"
 
   let clase = "";
