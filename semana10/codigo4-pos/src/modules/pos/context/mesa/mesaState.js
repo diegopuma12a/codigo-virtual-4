@@ -1,6 +1,9 @@
 import React, { useReducer } from 'react'
 import MesaContext from './mesaContext'
 import MesaReducer from './mesaReducer';
+import moment from "moment";
+import { postPedido } from '../../../../services/pedidosService';
+import Swal from 'sweetalert2';
 
 const MesaState = (props) => {
 
@@ -98,7 +101,6 @@ const MesaState = (props) => {
 
 
   }
-
   const restarPlato = (objPlato) => {
 
     let { globalPedidos, globalObjMesa } = state;
@@ -145,7 +147,6 @@ const MesaState = (props) => {
 
 
   }
-
   const seleccionarMesaGlobal = (objMesa) => {
     dispatch({
       type: "SELECCIONAR_MESA",
@@ -159,6 +160,51 @@ const MesaState = (props) => {
     })
   }
 
+  const globalPagar = () => {
+
+    const pedidoActual = state.globalPedidos.find(pedido => state.globalObjMesa.mesa_id === pedido.mesa_id);
+
+    const pedidoplatos = pedidoActual.platos.map(plato => ({
+      plato_id: plato.plato_id,
+      pedidoplato_cant: plato.plato_cant
+    }));
+
+    const objPedido = {
+      usu_id: 1,
+      mesa_id: state.globalObjMesa.mesa_id,
+      pedido_est: "pagado",
+      pedido_nro: "100",
+      pedido_fech: moment().format("YYYY-MM-DD HH:mm:ss"),
+      pedidoplatos
+    };
+
+    postPedido(objPedido).then(data => {
+
+      console.log(data);
+      if (data.ok) {
+        Swal.fire({
+          title: "Pago Registrado!",
+          text: "El pago se ha realizado exitosamente",
+          icon: "success",
+          timer: 1500,
+          showConfirmButton: false
+        })
+        
+        const nuevoGlobalPedidos =
+          state.globalPedidos.filter(pedido => pedido.mesa_id !== state.globalObjMesa.mesa_id);
+        dispatch({
+          type: "ACTUALIZAR_GLOBAL_PEDIDOS",
+          data: nuevoGlobalPedidos
+        });
+
+
+      }
+
+    });
+
+
+  }
+
   return (
     <MesaContext.Provider value={{
       globalObjMesa: state.globalObjMesa,
@@ -167,7 +213,8 @@ const MesaState = (props) => {
       seleccionarMesaGlobal,
       seleccionarCategoriaGlobal,
       agregarPlato,
-      restarPlato
+      restarPlato,
+      globalPagar
     }}>
       {props.children}
     </MesaContext.Provider>

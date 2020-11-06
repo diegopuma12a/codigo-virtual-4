@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
 import MesaContext from '../context/mesa/mesaContext';
 import PosComandaItem from './PosComandaItem'
+import Swal from "sweetalert2";
 
 const PosComanda = () => {
 
-  const { globalPedidos, globalObjMesa } = useContext(MesaContext);
+  const { globalPedidos, globalObjMesa, globalPagar } = useContext(MesaContext);
 
   let pedidoActual;
 
@@ -30,7 +31,23 @@ const PosComanda = () => {
             <span>No se ha seleccionado ninguna mesa 🙄</span>
         }
       </ul>
-      <button className="boton boton-success boton-block">PAGAR</button>
+      <button className="boton boton-success boton-block" onClick={() => {
+        if (!globalObjMesa) return;
+
+        Swal.fire({
+          title: "Confirmar Pago",
+          text: "Los cambios se harán efecto en la base de datos",
+          icon: "question",
+          showCancelButton: true
+        }).then(({ isConfirmed }) => {
+          if (isConfirmed) {
+            globalPagar();
+          }
+        })
+
+      }}>
+        PAGAR
+      </button>
     </div>
   )
 }
