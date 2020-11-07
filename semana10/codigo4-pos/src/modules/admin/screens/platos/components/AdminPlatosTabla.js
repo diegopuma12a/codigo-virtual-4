@@ -38,7 +38,7 @@ const AdminPlatosTabla = () => {
 
                   {
                     platos.map(plato => (
-                      <tr>
+                      <tr key={plato.plato_id}>
                         <td>{plato.plato_id}</td>
                         <td>{plato.plato_nom}</td>
                         <td>{plato.plato_pre}</td>
