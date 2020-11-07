@@ -1,21 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getPlatos } from '../../../../../services/platosService';
 
-const AdminPlatosTabla = () => {
-
-  const [platos, setPlatos] = useState([]);
-
-  const traerPlatos = async () => {
-    const data = await getPlatos();
-    if (data.ok) {
-      setPlatos(data.content);
-    }
-  }
-
-  useEffect(() => {
-    traerPlatos();
-  }, [])
-
+const AdminPlatosTabla = ({ platos }) => {
 
   return (
     <div className="row">

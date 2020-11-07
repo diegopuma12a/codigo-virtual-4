@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import Swal from 'sweetalert2';
 import { getCategorias } from '../../../../../services/categoriasService';
 import { postImagenByPlatoId, postPlatoSinImagen } from '../../../../../services/platosService';
 
@@ -8,7 +9,7 @@ const formularioVacio = {
   categoria_id: 0
 }
 
-const AdminPlatosForm = () => {
+const AdminPlatosForm = ({ traerPlatos }) => {
 
   const [formulario, setFormulario] = useState(formularioVacio);
   const [categorias, setCategorias] = useState([]);
@@ -39,6 +40,17 @@ const AdminPlatosForm = () => {
   const onSubmit = e => {
     e.preventDefault();
 
+    Swal.fire({
+      title: "Espere...",
+      text: "Estamos subiendo la información al servidor",
+      icon: "info",
+      showConfirmButton: false,
+      // deniega el derecho de hacer click fuera del cuadro de Sweetalert
+      // En este caso, la única forma de cerrar éste sweetalert
+      // será lanzando otro sweetalert que sí se pueda cancelar o cerrar
+      allowOutsideClick: false
+    })
+
     const objPlato = {
       ...formulario,
       plato_img: ""
@@ -46,10 +58,26 @@ const AdminPlatosForm = () => {
 
     postPlatoSinImagen(objPlato).then(data => {
       if (data.ok) {
+
         const plato_id = data.content.plato_id;
-        postImagenByPlatoId(plato_id, archivoRef.current.files[0]).then(rpta => {
-          console.log(rpta);
-        })
+
+        postImagenByPlatoId(plato_id, archivoRef.current.files[0])
+          .then(rpta => {
+            if (rpta.ok) {
+              traerPlatos();
+              setFormulario(formularioVacio);
+              // quitar la imagen del input file
+              archivoRef.current.value = "";
+              Swal.fire({
+                title: "Hecho!",
+                icon: "success",
+                text: "El plato y su imagen fueron creados con éxito",
+                timer: 1500,
+                showConfirmButton: false
+              });
+            }
+          })
+
       }
     })
 
