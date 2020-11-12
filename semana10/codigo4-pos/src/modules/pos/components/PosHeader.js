@@ -1,9 +1,11 @@
-import React from 'react'
-
+import React, { useContext } from 'react'
+import AuthContext from '../../auth/context/authContext';
+import { withRouter } from "react-router-dom";
 import logoSVG from "./../../../assets/img/logo.svg";
 import searchSVG from "./../../../assets/img/search.svg";
 
-const PosHeader = () => {
+const PosHeader = ({ history }) => {
+  const { usu_nom, cerrarSesion } = useContext(AuthContext);
   return (
     <header className="header">
       <div className="header__logo">
@@ -15,10 +17,17 @@ const PosHeader = () => {
       </div>
       <div className="header__usuario">
         <img src="https://randomuser.me/api/portraits/men/90.jpg" alt="" />
-        <span>Jorge Garnica</span>
+        <span>{usu_nom}</span>
+
+        <button className="btn btn-outline-danger" onClick={() => {
+          cerrarSesion();
+          history.replace("/");
+        }}>
+          Cerrar Sesión
+        </button>
       </div>
     </header>
   )
 }
 
-export default PosHeader
+export default withRouter(PosHeader);
